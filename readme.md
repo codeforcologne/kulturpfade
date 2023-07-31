@@ -6,6 +6,6 @@ Die Hinweistafeln wurden zuletzt Anfang der 2010er Jahre auf Betreiben von Stadt
 
 Im Rahmen eines Open Data Projektes des OK Lab Köln und der Stadt Köln, werden zunächst noch existierende Quellen recherchiert und eine Applikation entwickelt, die das Wissen wieder zugänglich machen soll und die Möglichkeit bietet, weitere Kulturpfade zu erschliessen.
 
-Die App, die zur Planung der Kulturpfade eingesetzt werden soll, wird zur Zeit unter https://github.com/weberius/kulturpfadservice entwickelt.
+Die App, die zur Planung der Kulturpfade eingesetzt werden soll, wird zur Zeit unter [weberius/kulturpfadservice](https://github.com/weberius/kulturpfadservice) entwickelt. Es handelt sich dabei um einen mit java realisierten Service, der auf Basis von Openstreetmap das Routing zwischen Points Of Interest ermöglicht. Dabei ist möglich, nicht den direkten, sondern einen alternativen Weg zu ermitteln. Die Kulturpfade Anwendung wird als halbdynamische WebSeite mit JavaScript Code in diesem Bereich veröffentlicht.
 
 Weitere Informationen finden sich im [Wiki](https://github.com/codeforcologne/kulturpfade/wiki)
