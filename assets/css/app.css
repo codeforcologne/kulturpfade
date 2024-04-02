@@ -175,3 +175,29 @@ input[type="radio"], input[type="checkbox"] {
     display: none !important;
   }
 }
+
+.red-label {
+  border-radius: 10px;
+  padding: 3px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+}
+
+.red-tooltip {
+  border-radius: 10px;
+  padding: 5px;
+  spacing: 5px;
+  background-color: red;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+}
+
+.leaflet-tooltip {
+  background-color: transparent;
+  border: 5px;
+  box-shadow: 5px;
+  font-size: 16px;
+}

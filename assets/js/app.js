@@ -98,16 +98,17 @@ function syncSidebar() {
         $("#feature-list tbody")
           .append('<tr class="feature-row" id="'
             + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng
-            + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/reddot.png"></td><td class="feature-name">'
-            + layer.feature.properties.NAME + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+            + '"><td style="vertical-align: middle;text-align: right" class="feature-nr">' + layer.feature.properties.nr + '</td><td class="feature-name">'
+            + layer.feature.properties.name + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
       }
     }
   });
+
   /* Update list.js featureList */
   featureList = new List("features", {
     valueNames: ["feature-name"]
   });
-  featureList.sort("feature-name", {
+  featureList.sort("feature-nr", {
     order: "asc"
   });
 }
@@ -172,22 +173,26 @@ var theaterLayer = L.geoJson(null);
 var theaters = L.geoJson(null, {
   pointToLayer: function (feature, latlng) {
     return L.marker(latlng, {
-      icon: L.icon({
-        iconUrl: "assets/img/reddot.png",
-        iconSize: [20, 20],
-        iconAnchor: [0, 0],
-        popupAnchor: [0, 0]
+      icon: L.divIcon({
+        className: 'red-tooltip',
+        html: '<div class="icon-container">' + feature.properties.nr + '</div>',
+        iconSize: [40, 30],
+        iconAnchor: [20, 10]
       }),
-      title: feature.properties.NAME,
+      title: feature.properties.nr,
       riseOnHover: true
     });
   },
   onEachFeature: function (feature, layer) {
     if (feature.properties) {
-      var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Name</th><td>" + feature.properties.NAME + "</td></tr>" + "<tr><th>Phone</th><td>" + feature.properties.TEL + "</td></tr>" + "<tr><th>Address</th><td>" + feature.properties.ADDRESS1 + "</td></tr>" + "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>" + "<table>";
+      var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Name</th><td>"
+      + feature.properties.name + "</td></tr>" + "<tr><th>Phone</th><td>"
+      + feature.properties.TEL + "</td></tr>" + "<tr><th>Address</th><td>"
+      + feature.properties.ADDRESS1 + "</td></tr>" + "<tr><th>Website</th><td><a class='url-break' href='"
+      + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>" + "<table>";
       layer.on({
         click: function (e) {
-          $("#feature-title").html(feature.properties.NAME);
+          $("#feature-title").html(feature.properties.nr + ' ' + feature.properties.name);
           $("#feature-info").html(content);
           $("#featureModal").modal("show");
           highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], highlightStyle));
@@ -196,8 +201,18 @@ var theaters = L.geoJson(null, {
       $("#feature-list tbody")
         .append('<tr class="feature-row" id="'
         + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng
-        + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/reddot.png"></td><td class="feature-name">'
-        + layer.feature.properties.NAME + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+        + '"><td style="vertical-align: middle;">' + layer.feature.properties.nr + '</td><td class="feature-name">'
+        + layer.feature.properties.name + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+
+      var tooltipOptions = {
+        offset: [10, -50],
+        iconAnchor: [20, 10],
+        className: 'leaflet-tooltip'
+      };
+      layer.bindTooltip('<div class="leaflet-tooltip">'
+      + layer.feature.properties.name
+      + '</div>', tooltipOptions).openTooltip();
+
       theaterSearch.push({
         name: layer.feature.properties.name,
         address: layer.feature.properties.id,
@@ -352,7 +367,7 @@ $(document).one("ajaxStop", function () {
   /* Fit map to boroughs bounds */
   map.fitBounds(boroughs.getBounds());
   featureList = new List("features", {valueNames: ["feature-name"]});
-  featureList.sort("feature-name", {order:"asc"});
+  featureList.sort("feature-nr", {order:"asc"});
 
   var boroughsBH = new Bloodhound({
     name: "Boroughs",
