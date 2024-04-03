@@ -201,3 +201,8 @@ input[type="radio"], input[type="checkbox"] {
   box-shadow: 5px;
   font-size: 16px;
 }
+
+.image-container {
+    float: right; /* Das Bild rechts ausrichten */
+    margin: 0 0 10px 10px; /* Platz um das Bild herum schaffen */
+}
