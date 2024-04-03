@@ -206,3 +206,25 @@ input[type="radio"], input[type="checkbox"] {
     float: right; /* Das Bild rechts ausrichten */
     margin: 0 0 10px 10px; /* Platz um das Bild herum schaffen */
 }
+
+#feature-info {
+  display: inline-block;
+}
+
+#feature-info img {
+  width:50%;
+  height: auto;
+  float: right;
+  margin: 10px 10px 10px 20px;
+}
+
+#feature-info img.pano {
+  width:100%;
+  height: auto;
+  margin: 10px 0px 10px 20px;
+}
+
+#feature-info p {
+  text-align: justify;
+  hyphens: auto;
+}
