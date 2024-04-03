@@ -156,7 +156,7 @@ var boroughs = L.geoJson(null, {
     });
   }
 });
-$.getJSON("route/05315000-b03-t01.geojson", function (data) {
+$.getJSON("service/route/05315000-b03-t01.geojson", function (data) {
   boroughs.addData(data);
 });
 
@@ -224,7 +224,7 @@ var theaters = L.geoJson(null, {
     }
   }
 });
-$.getJSON("poi/05315000-b03-t01.geojson", function (data) {
+$.getJSON("service/poi/05315000-b03-t01.geojson", function (data) {
   theaters.addData(data);
   map.addLayer(theaterLayer);
 });
