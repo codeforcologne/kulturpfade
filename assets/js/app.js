@@ -156,7 +156,7 @@ var boroughs = L.geoJson(null, {
     });
   }
 });
-$.getJSON("/service/route/05315000-b03-t05.geojson", function (data) {
+$.getJSON("service/route/05315000-b03-t05.geojson", function (data) {
   boroughs.addData(data);
 });
 
@@ -187,7 +187,7 @@ var theaters = L.geoJson(null, {
     if (feature.properties) {
 
       var content = "";
-      fetch('/service/info/' + feature.properties.id + '.html').then(response => {
+      fetch('service/info/' + feature.properties.id + '.html').then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -233,7 +233,7 @@ var theaters = L.geoJson(null, {
     }
   }
 });
-$.getJSON("/service/poi/05315000-b03-t05.geojson", function (data) {
+$.getJSON("service/poi/05315000-b03-t05.geojson", function (data) {
   theaters.addData(data);
   map.addLayer(theaterLayer);
 });
