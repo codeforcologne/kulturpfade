@@ -1,4 +1,5 @@
 var map, featureList, boroughSearch = [], theaterSearch = [], museumSearch = [];
+var urlroute, urlpoi;
 
 $(window).resize(function() {
   sizeLayerControl();
@@ -156,9 +157,31 @@ var boroughs = L.geoJson(null, {
     });
   }
 });
-$.getJSON("service/route/05315000-b03-t05.geojson", function (data) {
-  boroughs.addData(data);
-});
+
+if (getURLParameter("id")) {
+  urlroute = "service/route/" + getURLParameter("id") +  ".geojson"
+} else {
+  urlroute = "service/route/" + config.start.id +  ".geojson";
+}
+
+fetch(urlroute, {
+  method: 'HEAD' // Verwende die HEAD-Methode, um nur den Header abzurufen
+}).then(response => {
+    if (response.ok) {
+      $.getJSON(urlroute, function (data) {
+        boroughs.addData(data);
+      });
+    } else {
+      console.log('Die Seite wurde nicht gefunden.');
+      urlroute = "service/route/" + config.start.id +  ".geojson";
+      $.getJSON(urlroute, function (data) {
+        boroughs.addData(data);
+      });
+    }
+  }).catch(error => {
+    console.error('Ein Fehler ist aufgetreten:', error);
+  });
+
 
 /* Single marker cluster layer to hold all clusters */
 var markerClusters = new L.MarkerClusterGroup({
@@ -233,10 +256,31 @@ var theaters = L.geoJson(null, {
     }
   }
 });
-$.getJSON("service/poi/05315000-b03-t05.geojson", function (data) {
+
+if (getURLParameter("id")) {
+  urlpoi = "service/poi/" + getURLParameter("id") +  ".geojson"
+} else {
+  urlpoi = "service/poi/" + config.start.id +  ".geojson";
+}
+fetch(urlpoi, {
+  method: 'HEAD' // Verwende die HEAD-Methode, um nur den Header abzurufen
+}).then(response => {
+    if (response.ok) {
+      $.getJSON(urlpoi, function (data) {
   theaters.addData(data);
   map.addLayer(theaterLayer);
-});
+      });
+    } else {
+      console.log('Die Seite wurde nicht gefunden.');
+      urlpoi = "service/poi/" + config.start.id +  ".geojson";
+      $.getJSON(urlpoi, function (data) {
+  theaters.addData(data);
+  map.addLayer(theaterLayer);
+      });
+    }
+  }).catch(error => {
+    console.error('Ein Fehler ist aufgetreten:', error);
+  });
 
 map = L.map("map", {
   zoom: 14,
@@ -524,3 +568,4 @@ function getURLParameter(name) {
       || [null, ''])[1].replace(/\+/g, '%20')
   ) || null;
 }
+

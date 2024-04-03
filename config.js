@@ -6,7 +6,8 @@ var config = {
 		"zoom": 13,
 		"attributionControl": true,
 		"zoomControl": false,
-		"data": "data"
+		"data": "data",
+		"id":"05315000-b03-t05"
 	},
 	"about": {
 		"title": "Kulturpfade",
