@@ -115,20 +115,10 @@ function syncSidebar() {
 }
 
 /* Basemap Layers */
-var cartoLight = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png", {
+var osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>'
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 });
-var usgsImagery = L.layerGroup([L.tileLayer("http://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}", {
-  maxZoom: 15,
-}), L.tileLayer.wms("http://raster.nationalmap.gov/arcgis/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer/WMSServer?", {
-  minZoom: 16,
-  maxZoom: 19,
-  layers: "0",
-  format: 'image/jpeg',
-  transparent: true,
-  attribution: "Aerial Imagery courtesy USGS"
-})]);
 
 /* Overlay Layers */
 var highlight = L.geoJson(null);
@@ -285,7 +275,7 @@ fetch(urlpoi, {
 map = L.map("map", {
   zoom: 14,
   center: [50.944511,6.849597],
-  layers: [cartoLight, boroughs, markerClusters, highlight],
+  layers: [osm, boroughs, markerClusters, highlight],
   zoomControl: false,
   attributionControl: false
 });
@@ -380,8 +370,7 @@ if (document.body.clientWidth <= 767) {
 }
 
 var baseLayers = {
-  "Street Map": cartoLight,
-  "Aerial Imagery": usgsImagery
+  "Street Map": osm
 };
 
 var groupedOverlays = {
@@ -504,8 +493,8 @@ $(document).one("ajaxStop", function () {
     displayKey: "name",
     source: theatersBH.ttAdapter(),
     templates: {
-      header: "<h4 class='typeahead-header'><img src='assets/img/reddot.png' width='24' height='28'>&nbsp;Theaters</h4>",
-      suggestion: Handlebars.compile(["{{name}}<br>&nbsp;<small>{{address}}</small>"].join(""))
+      header: "<h4 class='typeahead-header'>&nbsp;Sehenswürdigkeiten</h4>",
+      suggestion: Handlebars.compile(["{{name}}"].join(""))
     }
   }, {
     name: "Museums",
