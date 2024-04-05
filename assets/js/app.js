@@ -31,6 +31,30 @@ $("#full-extent-btn").click(function() {
 });
 
 $("#legend-btn").click(function() {
+
+  // datatable
+  $(document).ready(function() {
+  	$('#culturalpath').DataTable({
+  	    ajax: {
+            url: 'service/data/05315000-b03-t05.json',
+            dataSrc: 'data'
+        },
+  		"searching": false,
+  		"paging": false,
+  		"ordering": false,
+  		"info": false,
+  		"retrieve": true,
+  		"columns" : [ {
+  			"data" : "name"
+  		}, {
+  			"data" : "time"
+  		}, {
+  			"data" : "distance"
+  		} ]
+  	});
+  });
+
+
   $("#legendModal").modal("show");
   $(".navbar-collapse.in").collapse("hide");
   return false;
@@ -551,6 +575,10 @@ if (!L.Browser.touch) {
   L.DomEvent.disableClickPropagation(container);
 }
 
+/**************************************************************************************************/
+// URL PARAMETER START
+/**************************************************************************************************/
+
 function getURLParameter(name) {
   return decodeURIComponent(
     (new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)
@@ -558,3 +586,38 @@ function getURLParameter(name) {
   ) || null;
 }
 
+/**************************************************************************************************/
+// CULTURALPATH TOOL START
+/**************************************************************************************************/
+
+function configureCulturalpathTool() {
+
+  bootleaf.activeTool = "culturalpath";
+  switchOffTools();
+  bootleaf.map.on('click', showMarker);
+
+  // datatable
+  $(document).ready(function() {
+  	$('#culturalpath').DataTable({
+  	    ajax: {
+            url: 'service/data/05315000-b03-t05.json',
+            dataSrc: 'data'
+        },
+  		"searching": false,
+  		"paging": false,
+  		"ordering": false,
+  		"info": false,
+  		"retrieve": true,
+  		"columns" : [ {
+  			"data" : "name"
+  		}, {
+  			"data" : "time"
+  		}, {
+  			"data" : "distance"
+  		} ]
+  	});
+  });
+
+  $("#legendModal").modal("show");
+  $(".navbar-collapse.in").collapse("hide");
+}
