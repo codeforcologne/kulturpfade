@@ -30,6 +30,10 @@ $("#full-extent-btn").click(function() {
   return false;
 });
 
+/**************************************************************************************************/
+// FILL TABLE
+/**************************************************************************************************/
+
 $("#legend-btn").click(function() {
 
     var urldata;
@@ -161,6 +165,10 @@ var highlightStyle = {
   radius: 10
 };
 
+/**************************************************************************************************/
+// ROUTE LAYER
+/**************************************************************************************************/
+
 var boroughs = L.geoJson(null, {
   style: function (feature) {
     return {
@@ -177,8 +185,22 @@ var boroughs = L.geoJson(null, {
       id: L.stamp(layer),
       bounds: layer.getBounds()
     });
+    layer.on({
+       click: function (e) {
+         $("#feature-title").html("Entfernung");
+         $("#feature-info").html("Entfernung zur nächsten Sehenwürdigkeit: "
+            + feature.properties.distance
+            + "<br/> Voraussichtliche Dauer ohne Pause: "
+            + feature.properties.time);
+         $("#featureModal").modal("show");
+       }
+    });
   }
 });
+
+/**************************************************************************************************/
+// GET ROUTE
+/**************************************************************************************************/
 
 if (getURLParameter("id")) {
   urlroute = "service/route/" + getURLParameter("id") +  ".geojson"
@@ -212,6 +234,10 @@ var markerClusters = new L.MarkerClusterGroup({
   zoomToBoundsOnClick: true,
   disableClusteringAtZoom: 16
 });
+
+/**************************************************************************************************/
+// POI LAYER
+/**************************************************************************************************/
 
 /* Empty layer placeholder to add to layer control for listening when to add/remove theaters to markerClusters layer */
 var theaterLayer = L.geoJson(null);
@@ -278,6 +304,10 @@ var theaters = L.geoJson(null, {
     }
   }
 });
+
+/**************************************************************************************************/
+// GET POIs
+/**************************************************************************************************/
 
 if (getURLParameter("id")) {
   urlpoi = "service/poi/" + getURLParameter("id") +  ".geojson"
