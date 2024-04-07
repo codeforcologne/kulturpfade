@@ -66,7 +66,6 @@ $("#legend-btn").click(function() {
   	});
   });
 
-
   $("#legendModal").modal("show");
   $(".navbar-collapse.in").collapse("hide");
   return false;
@@ -313,15 +312,15 @@ fetch(urlpoi, {
 }).then(response => {
     if (response.ok) {
       $.getJSON(urlpoi, function (data) {
-  theaters.addData(data);
-  map.addLayer(theaterLayer);
+          theaters.addData(data);
+          map.addLayer(theaterLayer);
       });
     } else {
       console.log('Die Seite wurde nicht gefunden.');
       urlpoi = "service/poi/" + config.start.id +  ".geojson";
       $.getJSON(urlpoi, function (data) {
-  theaters.addData(data);
-  map.addLayer(theaterLayer);
+          theaters.addData(data);
+          map.addLayer(theaterLayer);
       });
     }
   }).catch(error => {
@@ -617,4 +616,100 @@ function getURLParameter(name) {
       || [null, ''])[1].replace(/\+/g, '%20')
   ) || null;
 }
+
+/**************************************************************************************************/
+// DOWNLOAD MENU
+/**************************************************************************************************/
+
+/**
+Checks for existence of an URL.
+After then it appends a new Download Childe
+*/
+class Downloader {
+
+    constructor(urlparameter) {
+        this.url = urlparameter.getUrl();
+        this.path = urlparameter.getPath();
+        this.id = urlparameter.getId();
+        this.type = urlparameter.getType();
+    }
+
+    buildDownload() {
+        fetch(this.url, {
+          method: 'HEAD' // Verwende die HEAD-Methode, um nur den Header abzurufen
+        }).then(response => {
+          if (response.ok) {
+            console.log('Die Seite wurde gefunden.');
+            var newLi, targetElement;
+
+            newLi = document.createElement('li');
+            newLi.innerHTML = '<a href="service/' + this.path + '/' + this.id + '.' + this.type + '" download="' + this.id + '.' + this.type + '" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;' + this.path + ' als ' + this.type + '</a>';
+            targetElement = document.getElementById('downloadDropUl');
+            targetElement.appendChild(newLi);
+          } else {
+            console.log('Die Seite wurde nicht gefunden.');
+          }
+        }).catch(error => {
+          console.error('Ein Fehler ist aufgetreten:', error);
+        });
+    }
+
+}
+
+/*
+This class constructs an url out of urlparameter and returns url, id, path, type
+*/
+class URLParameter {
+
+    constructor() {
+        if (getURLParameter("id")) {
+            this.id = getURLParameter("id");
+        } else {
+            this.id = config.start.id;
+        }
+    }
+
+    getURLParameter(name) {
+        return decodeURIComponent(
+          (new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)
+          || [null, ''])[1].replace(/\+/g, '%20')
+        ) || null;
+    }
+
+    getId() {
+        return this.id;
+    }
+
+    getUrl() {
+        return "service/" + this.path + "/" + this.id + "." + this.type;
+    }
+
+    getPath() {
+        return this.path;
+    }
+
+    getType() {
+        return this.type;
+    }
+
+}
+
+/**
+This class extends URLParameter and defines path and type. Use like this:
+new URLParameterGPX().getUrl();
+*/
+class URLParameterGPX extends URLParameter {
+
+    path = "gpx";
+    type = "gpx";
+}
+
+class URLParameterPoi extends URLParameter {
+
+    path = "poi";
+    type = "geojson";
+}
+
+new Downloader(new URLParameterGPX()).buildDownload();
+new Downloader(new URLParameterPoi()).buildDownload();
 
