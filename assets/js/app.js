@@ -496,40 +496,9 @@ $(document).one("ajaxStop", function () {
     limit: 10
   });
 
-  var geonamesBH = new Bloodhound({
-    name: "GeoNames",
-    datumTokenizer: function (d) {
-      return Bloodhound.tokenizers.whitespace(d.name);
-    },
-    queryTokenizer: Bloodhound.tokenizers.whitespace,
-    remote: {
-      url: "http://api.geonames.org/searchJSON?username=bootleaf&featureClass=P&maxRows=5&countryCode=US&name_startsWith=%QUERY",
-      filter: function (data) {
-        return $.map(data.geonames, function (result) {
-          return {
-            name: result.name + ", " + result.adminCode1,
-            lat: result.lat,
-            lng: result.lng,
-            source: "GeoNames"
-          };
-        });
-      },
-      ajax: {
-        beforeSend: function (jqXhr, settings) {
-          settings.url += "&east=" + map.getBounds().getEast() + "&west=" + map.getBounds().getWest() + "&north=" + map.getBounds().getNorth() + "&south=" + map.getBounds().getSouth();
-          $("#searchicon").removeClass("fa-search").addClass("fa-refresh fa-spin");
-        },
-        complete: function (jqXHR, status) {
-          $('#searchicon').removeClass("fa-refresh fa-spin").addClass("fa-search");
-        }
-      }
-    },
-    limit: 10
-  });
   boroughsBH.initialize();
   theatersBH.initialize();
   museumsBH.initialize();
-  geonamesBH.initialize();
 
   /* instantiate the typeahead UI */
   $("#searchbox").typeahead({
@@ -559,13 +528,6 @@ $(document).one("ajaxStop", function () {
       header: "<h4 class='typeahead-header'><img src='assets/img/museum.png' width='24' height='28'>&nbsp;Museums</h4>",
       suggestion: Handlebars.compile(["{{name}}<br>&nbsp;<small>{{address}}</small>"].join(""))
     }
-  }, {
-    name: "GeoNames",
-    displayKey: "name",
-    source: geonamesBH.ttAdapter(),
-    templates: {
-      header: "<h4 class='typeahead-header'><img src='assets/img/globe.png' width='25' height='25'>&nbsp;GeoNames</h4>"
-    }
   }).on("typeahead:selected", function (obj, datum) {
     if (datum.source === "Boroughs") {
       map.fitBounds(datum.bounds);
@@ -578,9 +540,6 @@ $(document).one("ajaxStop", function () {
       if (map._layers[datum.id]) {
         map._layers[datum.id].fire("click");
       }
-    }
-    if (datum.source === "GeoNames") {
-      map.setView([datum.lat, datum.lng], 14);
     }
     if ($(".navbar-collapse").height() > 50) {
       $(".navbar-collapse").collapse("hide");
@@ -639,15 +598,14 @@ class Downloader {
           method: 'HEAD' // Verwende die HEAD-Methode, um nur den Header abzurufen
         }).then(response => {
           if (response.ok) {
-            console.log('Die Seite wurde gefunden.');
+            console.log('Elements for download initialized.');
             var newLi, targetElement;
-
             newLi = document.createElement('li');
             newLi.innerHTML = '<a href="service/' + this.path + '/' + this.id + '.' + this.type + '" download="' + this.id + '.' + this.type + '" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;' + this.path + ' als ' + this.type + '</a>';
             targetElement = document.getElementById('downloadDropUl');
             targetElement.appendChild(newLi);
           } else {
-            console.log('Die Seite wurde nicht gefunden.');
+            console.log('No data for download found.');
           }
         }).catch(error => {
           console.error('Ein Fehler ist aufgetreten:', error);
