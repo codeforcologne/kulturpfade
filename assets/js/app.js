@@ -1,4 +1,4 @@
-var map, featureList, boroughSearch = [], theaterSearch = [], museumSearch = [];
+var map, featureList, boroughSearch = [], theaterSearch = [];
 var urlroute, urlpoi;
 
 $(window).resize(function() {
@@ -486,19 +486,8 @@ $(document).one("ajaxStop", function () {
     limit: 10
   });
 
-  var museumsBH = new Bloodhound({
-    name: "Museums",
-    datumTokenizer: function (d) {
-      return Bloodhound.tokenizers.whitespace(d.name);
-    },
-    queryTokenizer: Bloodhound.tokenizers.whitespace,
-    local: museumSearch,
-    limit: 10
-  });
-
   boroughsBH.initialize();
   theatersBH.initialize();
-  museumsBH.initialize();
 
   /* instantiate the typeahead UI */
   $("#searchbox").typeahead({
@@ -519,14 +508,6 @@ $(document).one("ajaxStop", function () {
     templates: {
       header: "<h4 class='typeahead-header'>&nbsp;Sehenswürdigkeiten</h4>",
       suggestion: Handlebars.compile(["{{name}}"].join(""))
-    }
-  }, {
-    name: "Museums",
-    displayKey: "name",
-    source: museumsBH.ttAdapter(),
-    templates: {
-      header: "<h4 class='typeahead-header'><img src='assets/img/museum.png' width='24' height='28'>&nbsp;Museums</h4>",
-      suggestion: Handlebars.compile(["{{name}}<br>&nbsp;<small>{{address}}</small>"].join(""))
     }
   }).on("typeahead:selected", function (obj, datum) {
     if (datum.source === "Boroughs") {
