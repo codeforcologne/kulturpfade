@@ -1,4 +1,4 @@
-var map, featureList, boroughSearch = [], theaterSearch = [];
+var map, featureList, routeSearch = [], poiSearch = [];
 var urlroute, urlpoi;
 
 $(window).resize(function() {
@@ -25,7 +25,7 @@ $("#about-btn").click(function() {
 });
 
 $("#full-extent-btn").click(function() {
-  map.fitBounds(boroughs.getBounds());
+  map.fitBounds(routes.getBounds());
   $(".navbar-collapse.in").collapse("hide");
   return false;
 });
@@ -121,9 +121,9 @@ function sidebarClick(id) {
 function syncSidebar() {
   /* Empty sidebar features */
   $("#feature-list tbody").empty();
-  /* Loop through theaters layer and add only features which are in the map bounds */
-  theaters.eachLayer(function (layer) {
-    if (map.hasLayer(theaterLayer)) {
+  /* Loop through pois layer and add only features which are in the map bounds */
+  pois.eachLayer(function (layer) {
+    if (map.hasLayer(poiLayer)) {
       if (map.getBounds().contains(layer.getLatLng())) {
         $("#feature-list tbody")
           .append('<tr class="feature-row" id="'
@@ -162,7 +162,7 @@ var highlightStyle = {
 // ROUTE LAYER
 /**************************************************************************************************/
 
-var boroughs = L.geoJson(null, {
+var routes = L.geoJson(null, {
   style: function (feature) {
     return {
       color: "black",
@@ -172,9 +172,9 @@ var boroughs = L.geoJson(null, {
     };
   },
   onEachFeature: function (feature, layer) {
-    boroughSearch.push({
-      name: layer.feature.properties.BoroName,
-      source: "Boroughs",
+    routeSearch.push({
+      name: layer.feature.properties.name,
+      source: "routes",
       id: L.stamp(layer),
       bounds: layer.getBounds()
     });
@@ -206,13 +206,13 @@ fetch(urlroute, {
 }).then(response => {
     if (response.ok) {
       $.getJSON(urlroute, function (data) {
-        boroughs.addData(data);
+        routes.addData(data);
       });
     } else {
       console.log('Die Seite wurde nicht gefunden.');
       urlroute = "service/route/" + config.start.id +  ".geojson";
       $.getJSON(urlroute, function (data) {
-        boroughs.addData(data);
+        routes.addData(data);
       });
     }
   }).catch(error => {
@@ -232,9 +232,9 @@ var markerClusters = new L.MarkerClusterGroup({
 // POI LAYER
 /**************************************************************************************************/
 
-/* Empty layer placeholder to add to layer control for listening when to add/remove theaters to markerClusters layer */
-var theaterLayer = L.geoJson(null);
-var theaters = L.geoJson(null, {
+/* Empty layer placeholder to add to layer control for listening when to add/remove pois to markerClusters layer */
+var poiLayer = L.geoJson(null);
+var pois = L.geoJson(null, {
   pointToLayer: function (feature, latlng) {
     return L.marker(latlng, {
       icon: L.divIcon({
@@ -286,10 +286,10 @@ var theaters = L.geoJson(null, {
       + layer.feature.properties.name
       + '</div>', tooltipOptions).openTooltip();
 
-      theaterSearch.push({
+      poiSearch.push({
         name: layer.feature.properties.name,
         address: layer.feature.properties.id,
-        source: "Theaters",
+        source: "pois",
         id: L.stamp(layer),
         lat: layer.feature.geometry.coordinates[1],
         lng: layer.feature.geometry.coordinates[0]
@@ -312,15 +312,15 @@ fetch(urlpoi, {
 }).then(response => {
     if (response.ok) {
       $.getJSON(urlpoi, function (data) {
-          theaters.addData(data);
-          map.addLayer(theaterLayer);
+          pois.addData(data);
+          map.addLayer(poiLayer);
       });
     } else {
       console.log('Die Seite wurde nicht gefunden.');
       urlpoi = "service/poi/" + config.start.id +  ".geojson";
       $.getJSON(urlpoi, function (data) {
-          theaters.addData(data);
-          map.addLayer(theaterLayer);
+          pois.addData(data);
+          map.addLayer(poiLayer);
       });
     }
   }).catch(error => {
@@ -330,22 +330,22 @@ fetch(urlpoi, {
 map = L.map("map", {
   zoom: 14,
   center: [50.944511,6.849597],
-  layers: [osm, boroughs, markerClusters, highlight],
+  layers: [osm, routes, markerClusters, highlight],
   zoomControl: false,
   attributionControl: false
 });
 
 /* Layer control listeners that allow for a single markerClusters layer */
 map.on("overlayadd", function(e) {
-  if (e.layer === theaterLayer) {
-    markerClusters.addLayer(theaters);
+  if (e.layer === poiLayer) {
+    markerClusters.addLayer(pois);
     syncSidebar();
   }
 });
 
 map.on("overlayremove", function(e) {
-  if (e.layer === theaterLayer) {
-    markerClusters.removeLayer(theaters);
+  if (e.layer === poiLayer) {
+    markerClusters.removeLayer(pois);
     syncSidebar();
   }
 });
@@ -430,10 +430,10 @@ var baseLayers = {
 
 var groupedOverlays = {
   "Sehenswürdigkeiten": {
-    "Sehenswürdigkeiten": theaterLayer
+    "Sehenswürdigkeiten": poiLayer
   },
   "Kulturpfade": {
-    "Lindenthal": boroughs
+    "Lindenthal": routes
   }
 };
 
@@ -461,33 +461,33 @@ $("#featureModal").on("hidden.bs.modal", function (e) {
 $(document).one("ajaxStop", function () {
   $("#loading").hide();
   sizeLayerControl();
-  /* Fit map to boroughs bounds */
-  map.fitBounds(boroughs.getBounds());
+  /* Fit map to routes bounds */
+  map.fitBounds(routes.getBounds());
   featureList = new List("features", {valueNames: ["feature-name"]});
   featureList.sort("feature-nr", {order:"asc"});
 
-  var boroughsBH = new Bloodhound({
-    name: "Boroughs",
+  var routesBH = new Bloodhound({
+    name: "routes",
     datumTokenizer: function (d) {
       return Bloodhound.tokenizers.whitespace(d.name);
     },
     queryTokenizer: Bloodhound.tokenizers.whitespace,
-    local: boroughSearch,
+    local: routeSearch,
     limit: 10
   });
 
-  var theatersBH = new Bloodhound({
-    name: "Theaters",
+  var poisBH = new Bloodhound({
+    name: "pois",
     datumTokenizer: function (d) {
       return Bloodhound.tokenizers.whitespace(d.name);
     },
     queryTokenizer: Bloodhound.tokenizers.whitespace,
-    local: theaterSearch,
+    local: poiSearch,
     limit: 10
   });
 
-  boroughsBH.initialize();
-  theatersBH.initialize();
+  routesBH.initialize();
+  poisBH.initialize();
 
   /* instantiate the typeahead UI */
   $("#searchbox").typeahead({
@@ -495,27 +495,27 @@ $(document).one("ajaxStop", function () {
     highlight: true,
     hint: false
   }, {
-    name: "Boroughs",
+    name: "routes",
     displayKey: "name",
-    source: boroughsBH.ttAdapter(),
+    source: routesBH.ttAdapter(),
     templates: {
-      header: "<h4 class='typeahead-header'>Boroughs</h4>"
+      header: "<h4 class='typeahead-header'>Routes</h4>"
     }
   }, {
-    name: "Theaters",
+    name: "pois",
     displayKey: "name",
-    source: theatersBH.ttAdapter(),
+    source: poisBH.ttAdapter(),
     templates: {
       header: "<h4 class='typeahead-header'>&nbsp;Sehenswürdigkeiten</h4>",
       suggestion: Handlebars.compile(["{{name}}"].join(""))
     }
   }).on("typeahead:selected", function (obj, datum) {
-    if (datum.source === "Boroughs") {
+    if (datum.source === "routes") {
       map.fitBounds(datum.bounds);
     }
-    if (datum.source === "Theaters") {
-      if (!map.hasLayer(theaterLayer)) {
-        map.addLayer(theaterLayer);
+    if (datum.source === "pois") {
+      if (!map.hasLayer(poiLayer)) {
+        map.addLayer(poiLayer);
       }
       map.setView([datum.lat, datum.lng], 17);
       if (map._layers[datum.id]) {
