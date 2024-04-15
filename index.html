@@ -54,6 +54,13 @@
             <!-- content will be injected by Class Downloader -->
           </ul>
         </li>
+        <li class="dropdown">
+          <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe white"></i>&nbsp;&nbsp;Sprachen <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="language-de"><i class="fa fa-language"></i>&nbsp;&nbsp;deutsch</a></li>
+            <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="language-en"><i class="fa fa-language"></i>&nbsp;&nbsp;english</a></li>
+          </ul>
+        </li>
         <li class="hidden-xs"><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="list-btn"><i class="fa fa-list white"></i>&nbsp;&nbsp;POI List</a></li>
         <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="about-btn"><i class="fa fa-question-circle white"></i>&nbsp;&nbsp;About</a></li>
       </ul>
@@ -103,7 +110,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Welcome to the BootLeaf template!</h4>
+        <h4 class="modal-title">Willkommen zu den Kulturpfaden</h4>
       </div>
       <div class="modal-body">
         <ul class="nav nav-tabs nav-justified" id="aboutTabs">
@@ -112,10 +119,12 @@
         </ul>
         <div class="tab-content" id="aboutTabsContent">
           <div class="tab-pane fade active in" id="about">
-            <div class="tab-pane fade active in" id="about">
               <p>
-                Diese Webseite dient der Darstellung der Kulturpfade in Köln. Die Daten sind den originalen Flyern entnommen.
-                Die Fotos wurden neu angefertigt.
+                Die Kulturpfade Köln wurden Ende der 1970er Jahre entwickelt. Sie sollten das Bewusstsein für den Denkmalschutz im Köln der Nachkriegszeit wecken. Im Stadtbild waren sie durch Hinweistafeln repräsentiert, die zumeist an Gebäuden installiert wurden. Sie erzählten die bau- und siedlungsgeschichtlichen Aspekte des jeweiligen Bauwerks mit einem Überblick benachbarter Punkte des gleichen Kulturpfads.
+              </p><p>
+                Die Hinweistafeln wurden zuletzt Anfang der 2010er Jahre auf Betreiben von Stadtteilvereinen teilweise erneuert. Obwohl es einige Publikationen zu den Kulturpfaden gab, ist das Wissen darum nur noch bruchstückhaft vorhanden.
+              </p><p>
+                Im Rahmen eines Open Data Projektes des OK Lab Köln und der Stadt Köln, werden zunächst noch existierende Quellen recherchiert und eine Applikation entwickelt, die das Wissen wieder zugänglich machen soll und die Möglichkeit bietet, weitere Kulturpfade zu erschliessen.
               </p>
               <div class="panel panel-primary">
                 <div class="panel-heading">Features</div>
@@ -149,7 +158,6 @@
                     Informationen im geojson- und gpx-Format im Bereich Downloads</li>
                 </ul>
               </div>
-            </div>
 
           </div>
           <div id="disclaimer" class="tab-pane fade text-danger">
@@ -182,7 +190,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="closeBtn">Close</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -207,7 +215,7 @@
         </table>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="closeBtn">Close</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -222,7 +230,7 @@
       </div>
       <div class="modal-body" id="feature-info"></div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="closeBtn">Close</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -244,7 +252,7 @@
             developed by <a href="https://github.com/bmcbride" target="_new">Bryan McBride</a></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="closeBtn">Close</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -259,8 +267,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.79.0/L.Control.Locate.min.js"></script>
 <script src="https://cdn.datatables.net/2.0.3/js/dataTables.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/23.11.1/i18next.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-http-backend/2.5.0/i18nextHttpBackend.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-browser-languagedetector/7.2.1/i18nextBrowserLanguageDetector.min.js"></script>
+
 <script src="assets/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.js"></script>
-<script src="config.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/locale.js"></script>
 <script src="assets/js/app.js"></script>
 </body>
 </html>

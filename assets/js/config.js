@@ -1,5 +1,8 @@
 var config = {
 	"title": "Kulturpfade Köln",
+	"brand": "Kulturpfade Lindenthal",
+	"languages": ['de','en'],
+	"defaultLanguage": 'de',
 	"start": {
 		// "maxZoom": 16,
 		"center": [50.93551,6.953081],

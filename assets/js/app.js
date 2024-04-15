@@ -1,6 +1,10 @@
 var map, featureList, routeSearch = [], poiSearch = [];
 var urlroute, urlpoi;
 
+// Sprache des Browsers ermitteln
+var browserLanguage = navigator.language || navigator.userLanguage;
+console.log("Browsersprache:", browserLanguage);
+
 $(window).resize(function() {
   sizeLayerControl();
 });
@@ -251,7 +255,7 @@ var pois = L.geoJson(null, {
     if (feature.properties) {
 
       var content = "";
-      fetch('service/info/' + feature.properties.id + '.html').then(response => {
+      fetch('locales/' + getLanguage() + '/' + feature.properties.id + '.html').then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -376,7 +380,8 @@ var attributionControl = L.control({
 });
 attributionControl.onAdd = function (map) {
   var div = L.DomUtil.create("div", "leaflet-control-attribution");
-  div.innerHTML = "<span class='hidden-xs'>Developed by <a href='https://weberius.github.io/' target='_new'>Wolfram Eberius (OK Lab Köln)</a> | </span><a href='#' onclick='$(\"#attributionModal\").modal(\"show\"); return false;'>Attribution</a>";
+  div.innerHTML = "<span class='hidden-xs'>TODO: to be filled by i18next</a>";
+//  div.innerHTML = "<span class='hidden-xs'>Developed by <a href='https://weberius.github.io/' target='_new'>Wolfram Eberius (OK Lab Köln)</a> | </span><a href='#' onclick='$(\"#attributionModal\").modal(\"show\"); return false;'>Attribution</a>";
   return div;
 };
 map.addControl(attributionControl);
