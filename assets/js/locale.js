@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fallbackLng: 'de',
         debug: false,
         i18nextHttpBackend: {
-           loadPath: './locales/{{lng}}/{{ns}}.json',
+           loadPath: './kulturpfade/locales/{{lng}}/{{ns}}.json'
         },
         ns: namespace
       }, function(err, t) {
