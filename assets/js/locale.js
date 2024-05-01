@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .init({
         lng: 'de',
         fallbackLng: 'de',
-        debug: false,
+        debug: true,
         i18nextHttpBackend: {
            loadPath: './kulturpfade/locales/{{lng}}/{{ns}}.json'
         },
