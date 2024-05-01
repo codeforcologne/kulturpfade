@@ -1,0 +1,39 @@
+<p>
+    The cultural paths Cologne were developed at the end of the 1970s. They should raise awareness of the protection of monuments in post-war Cologne. In the cityscape, they were represented by information boards, which were mostly installed on buildings. They told the building and settlement history aspects of the respective building with an overview of neighboring points of the same cultural path.
+</p><p>
+    The information boards were last partially renewed at the beginning of the 2010s at the instigation of district associations. Although there were some publications on the cultural paths, the knowledge about them is only fragmentary.
+</p><p>
+    As part of an open data project of the OK Lab Cologne and the city of Cologne, still existing sources are initially researched and an application is being developed that should make knowledge accessible again and offers the opportunity to open up further cultural paths.
+</p>
+<div class="panel panel-primary">
+    <div class="panel-heading">Features</div>
+    <ul class="list-group">
+        <li class="list-group-item">Anzeige der Informationen
+            sowohl im Desktop-Browser, als auch auf Tablet und Smartphone
+            durch Verwendung von <a href="https://github.com/bmcbride/bootleaf" target="_blank">Bootleaf</a>,
+            <a href="http://getbootstrap.com/" target="_blank">Bootstrap
+                3</a> und <a href="http://leafletjs.com/" target="_blank">Leaflet</a>.
+        </li>
+        <li class="list-group-item">Darstellung der Route auf Basis der OpenStreetMap Karte</li>
+        <li class="list-group-item">Auflistung der Sehenswürdigkeiten</li>
+        <li class="list-group-item">Modaler Dialog zur Darstellung jeder Sehenswürdigkeit mit Text und Bild</li>
+        <li class="list-group-item">Modaler Dialog zur Darstellung der Entfernungen und geschätzten Dauer wenn die Strecke zu Fuss zurück gelegt wird.</li>
+        <li class="list-group-item">Erstellung der Daten mit Hilfe des <a
+                href="https://github.com/weberius/kulturpfadservice">kulturpfadservice</a></li>
+        <li class="list-group-item">GPS basierte Verortung, zur
+            Ermittlung des aktuellen Standortes mit <a
+                    href="https://www.mapbox.com/mapbox.js/example/v1.0.0/leaflet-locatecontrol/"
+                    target="_blank">Mapbox Leaflet Locate</a>
+        </li>
+        <li class="list-group-item">Marker clustering bei höheren Zoomleveln zur Erhöhung der
+            Anzeigegeschwindigkeit mit <a
+                    href="https://github.com/Leaflet/Leaflet.markercluster"
+                    target="_blank">Leaflet marker cluster plugin</a>
+        </li>
+        <li class="list-group-item">Laden der Daten in den Browser
+            und Suche über die Sehenswürdigkeiten mit <a href="http://twitter.github.io/typeahead.js/" target="_blank">typeahead.js</a>
+        </li>
+        <li class="list-group-item">Download aufbereiteter
+            Informationen im geojson- und gpx-Format im Bereich Downloads</li>
+    </ul>
+</div>

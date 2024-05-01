@@ -36,7 +36,7 @@
         <a href="#" class="navbar-icon pull-right visible-xs" id="nav-btn"><i class="fa fa-bars fa-lg white"></i></a>
         <a href="#" class="navbar-icon pull-right visible-xs" id="sidebar-toggle-btn"><i class="fa fa-search fa-lg white"></i></a>
       </div>
-      <a class="navbar-brand" href="#" id="brand">Kulturpfade</a>
+      <a class="navbar-brand" href="#" id="brand">Pfade</a>
     </div>
     <div class="navbar-collapse collapse">
       <form class="navbar-form navbar-right" role="search">
@@ -55,10 +55,9 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe white"></i>&nbsp;&nbsp;Sprachen <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="language-de"><i class="fa fa-language"></i>&nbsp;&nbsp;deutsch</a></li>
-            <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="language-en"><i class="fa fa-language"></i>&nbsp;&nbsp;english</a></li>
+          <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe white"></i>&nbsp;&nbsp;<span id="languageSelectorA">Sprache</span><b class="caret"></b></a>
+          <ul class="dropdown-menu" id="languageSelectorUl">
+            <!-- content will be injected by Class LanguageSelector -->
           </ul>
         </li>
         <li class="hidden-xs"><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="list-btn"><i class="fa fa-list white"></i>&nbsp;&nbsp;POI List</a></li>
@@ -110,7 +109,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Willkommen zu den Kulturpfaden</h4>
+        <h4 class="modal-title"><span id="welcomeModelTitle">Willkommen zu den Kulturpfaden</span></h4>
       </div>
       <div class="modal-body">
         <ul class="nav nav-tabs nav-justified" id="aboutTabs">
@@ -119,78 +118,15 @@
         </ul>
         <div class="tab-content" id="aboutTabsContent">
           <div class="tab-pane fade active in" id="about">
-              <p>
-                Die Kulturpfade Köln wurden Ende der 1970er Jahre entwickelt. Sie sollten das Bewusstsein für den Denkmalschutz im Köln der Nachkriegszeit wecken. Im Stadtbild waren sie durch Hinweistafeln repräsentiert, die zumeist an Gebäuden installiert wurden. Sie erzählten die bau- und siedlungsgeschichtlichen Aspekte des jeweiligen Bauwerks mit einem Überblick benachbarter Punkte des gleichen Kulturpfads.
-              </p><p>
-                Die Hinweistafeln wurden zuletzt Anfang der 2010er Jahre auf Betreiben von Stadtteilvereinen teilweise erneuert. Obwohl es einige Publikationen zu den Kulturpfaden gab, ist das Wissen darum nur noch bruchstückhaft vorhanden.
-              </p><p>
-                Im Rahmen eines Open Data Projektes des OK Lab Köln und der Stadt Köln, werden zunächst noch existierende Quellen recherchiert und eine Applikation entwickelt, die das Wissen wieder zugänglich machen soll und die Möglichkeit bietet, weitere Kulturpfade zu erschliessen.
-              </p>
-              <div class="panel panel-primary">
-                <div class="panel-heading">Features</div>
-                <ul class="list-group">
-                  <li class="list-group-item">Anzeige der Informationen
-                    sowohl im Desktop-Browser, als auch auf Tablet und Smartphone
-                    durch Verwendung von <a href="https://github.com/bmcbride/bootleaf" target="_blank">Bootleaf</a>,
-                    <a href="http://getbootstrap.com/" target="_blank">Bootstrap
-                      3</a> und <a href="http://leafletjs.com/" target="_blank">Leaflet</a>.
-                  </li>
-                  <li class="list-group-item">Darstellung der Route auf Basis der OpenStreetMap Karte</li>
-                  <li class="list-group-item">Auflistung der Sehenswürdigkeiten</li>
-                  <li class="list-group-item">Modaler Dialog zur Darstellung jeder Sehenswürdigkeit mit Text und Bild</li>
-                  <li class="list-group-item">Modaler Dialog zur Darstellung der Entfernungen und geschätzten Dauer wenn die Strecke zu Fuss zurück gelegt wird.</li>
-                  <li class="list-group-item">Erstellung der Daten mit Hilfe des <a
-                          href="https://github.com/weberius/kulturpfadservice">kulturpfadservice</a></li>
-                  <li class="list-group-item">GPS basierte Verortung, zur
-                    Ermittlung des aktuellen Standortes mit <a
-                            href="https://www.mapbox.com/mapbox.js/example/v1.0.0/leaflet-locatecontrol/"
-                            target="_blank">Mapbox Leaflet Locate</a>
-                  </li>
-                  <li class="list-group-item">Marker clustering bei höheren Zoomleveln zur Erhöhung der
-                    Anzeigegeschwindigkeit mit <a
-                            href="https://github.com/Leaflet/Leaflet.markercluster"
-                            target="_blank">Leaflet marker cluster plugin</a>
-                  </li>
-                  <li class="list-group-item">Laden der Daten in den Browser
-                    und Suche über die Sehenswürdigkeiten mit <a href="http://twitter.github.io/typeahead.js/" target="_blank">typeahead.js</a>
-                  </li>
-                  <li class="list-group-item">Download aufbereiteter
-                    Informationen im geojson- und gpx-Format im Bereich Downloads</li>
-                </ul>
-              </div>
-
+            <!-- will be set by class AboutModal -->
           </div>
-          <div id="disclaimer" class="tab-pane fade text-danger">
-            <p>
-              <strong>1. Haftungsbeschränkung</strong><br /> Die Inhalte des
-              Internetauftritts wurden mit größtmöglicher Sorgfalt und nach
-              bestem Gewissen erstellt. Dennoch übernimmt der Anbieter dieser
-              Webseite keine Gewähr für die Aktualität, Vollständigkeit und
-              Richtigkeit der bereitgestellten Seiten und Inhalte.
-            </p>
-            <p>
-              <strong>2. Externe Links</strong><br /> Die Webseite enthält
-              sog. „externe Links“ (Verlinkungen) zu anderen Webseiten, auf
-              deren Inhalt der Anbieter der Webseite keinen Einfluss hat. Aus
-              diesem Grund kann der Anbieter für diese Inhalte auch keine
-              Gewähr übernehmen.<br />
-            </p>
-            <p>
-              <strong>3. Datenschutz</strong><br /> Durch den Besuch des
-              Internetauftritts können Informationen (Datum, Uhrzeit,
-              aufgerufene Seite) über den Zugriff auf dem Server gespeichert
-              werden. Es werden keine personenbezogenenen (z. B. Name,
-              Anschrift oder E-Mail-Adresse) Daten, gespeichert.
-            </p>
-            <p>
-              <strong>Quelle</strong>: <a
-                    href="http://www.mustervorlage.net/homepage-kostenlos">Disclaimer
-              und Websites erstellen</a>
+          <div class="tab-pane fade text-danger" id="disclaimer">
+            <!-- will be set by class DisclaimerModal -->
           </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" id="closeBtn">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><span id="closeBtnAboutModal">Schliessen</span></button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -215,7 +151,7 @@
         </table>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" id="closeBtn">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><span id="closeBtnLegendModal">Schliessen</span></button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -230,32 +166,14 @@
       </div>
       <div class="modal-body" id="feature-info"></div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" id="closeBtn">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><span id="closeBtnFeatureModel">Schliessen</span></button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
 <div class="modal fade" id="attributionModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Unter Verwendung von OpenStreetMap umd Bootleaf</h4>
-      </div>
-      <div class="modal-body">
-          <h5>OpenStreetMap</h5>
-          <p><a href="https://openstreetmap.org/" target="_new">OpenStreetMap (OSM)</a> ist ein kollaboratives, Open-Source-Projekt zur Erstellung einer detaillierten und frei verfügbaren Weltkarte. Durch die aktive Beteiligung der globalen Mapper-Gemeinschaft bietet OSM flexible und umfangreiche geographische Daten, die in einer Vielzahl von Anwendungen genutzt werden können.</p>
-          <h5>Bootleaf</h5>
-          <p><a href="https://github.com/bmcbride/bootleaf" target="_new">Bootleaf</a> is a simple, responsive template for building web mapping applications with
-            <a href="http://getbootstrap.com/" target="_new">Bootstrap</a>, <a href="Leaflet" target="_new">Leaflet</a>, and <a href="http://twitter.github.io/typeahead.js/" target="_new">typeahead.js</a>
-            developed by <a href="https://github.com/bmcbride" target="_new">Bryan McBride</a></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" id="closeBtn">Close</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
+  <!-- will be set by class AttributionModal -->
 </div><!-- /.modal -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

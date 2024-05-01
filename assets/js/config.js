@@ -3,6 +3,7 @@ var config = {
 	"brand": "Kulturpfade Lindenthal",
 	"languages": ['de','en'],
 	"defaultLanguage": 'de',
+	"namespace": "05315000-b03-t05",
 	"start": {
 		// "maxZoom": 16,
 		"center": [50.93551,6.953081],

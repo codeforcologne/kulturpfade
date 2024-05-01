@@ -1,6 +1,15 @@
 var map, featureList, routeSearch = [], poiSearch = [];
 var urlroute, urlpoi;
 
+var namespace;
+
+// get namespace from urlParameter
+if (getURLParameter("id")) {
+  namespace = getURLParameter("id");
+} else {
+  namespace = config.start.id;
+}
+
 // Sprache des Browsers ermitteln
 var browserLanguage = navigator.language || navigator.userLanguage;
 console.log("Browsersprache:", browserLanguage);
@@ -199,11 +208,7 @@ var routes = L.geoJson(null, {
 // GET ROUTE
 /**************************************************************************************************/
 
-if (getURLParameter("id")) {
-  urlroute = "service/route/" + getURLParameter("id") +  ".geojson"
-} else {
-  urlroute = "service/route/" + config.start.id +  ".geojson";
-}
+urlroute = "service/route/" + namespace +  ".geojson"
 
 fetch(urlroute, {
   method: 'HEAD' // Verwende die HEAD-Methode, um nur den Header abzurufen
@@ -238,6 +243,7 @@ var markerClusters = new L.MarkerClusterGroup({
 
 /* Empty layer placeholder to add to layer control for listening when to add/remove pois to markerClusters layer */
 var poiLayer = L.geoJson(null);
+
 var pois = L.geoJson(null, {
   pointToLayer: function (feature, latlng) {
     return L.marker(latlng, {
@@ -255,7 +261,9 @@ var pois = L.geoJson(null, {
     if (feature.properties) {
 
       var content = "";
-      fetch('locales/' + getLanguage() + '/' + feature.properties.id + '.html').then(response => {
+      var url = 'locales/' + languageCode + '/' + namespace + '/p' + feature.properties.nr + '.html';
+
+      fetch(url).then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -306,30 +314,38 @@ var pois = L.geoJson(null, {
 // GET POIs
 /**************************************************************************************************/
 
-if (getURLParameter("id")) {
-  urlpoi = "service/poi/" + getURLParameter("id") +  ".geojson"
-} else {
-  urlpoi = "service/poi/" + config.start.id +  ".geojson";
-}
-fetch(urlpoi, {
-  method: 'HEAD' // Verwende die HEAD-Methode, um nur den Header abzurufen
-}).then(response => {
-    if (response.ok) {
-      $.getJSON(urlpoi, function (data) {
-          pois.addData(data);
-          map.addLayer(poiLayer);
-      });
-    } else {
-      console.log('Die Seite wurde nicht gefunden.');
-      urlpoi = "service/poi/" + config.start.id +  ".geojson";
-      $.getJSON(urlpoi, function (data) {
-          pois.addData(data);
-          map.addLayer(poiLayer);
-      });
+function loadPoiLayer() {
+
+    urlpoi = "service/poi/" + namespace +  ".geojson"
+
+    // Schicht entfernen, falls bereits vorhanden
+    if (poiLayer) {
+        // remove layer from map
+        this.map.removeLayer(poiLayer);
+        // remove layer from markercluster
+        pois.clearLayers();
     }
-  }).catch(error => {
-    console.error('Ein Fehler ist aufgetreten:', error);
-  });
+
+    fetch(urlpoi, {
+      method: 'HEAD' // Verwende die HEAD-Methode, um nur den Header abzurufen
+    }).then(response => {
+        if (response.ok) {
+          $.getJSON(urlpoi, function (data) {
+              pois.addData(data);
+              map.addLayer(poiLayer);
+          });
+        } else {
+          console.log('Die Seite wurde nicht gefunden.');
+          urlpoi = "service/poi/" + config.start.id +  ".geojson";
+          $.getJSON(urlpoi, function (data) {
+              pois.addData(data);
+              map.addLayer(poiLayer);
+          });
+        }
+      }).catch(error => {
+        console.error('Ein Fehler ist aufgetreten:', error);
+      });
+}
 
 map = L.map("map", {
   zoom: 14,
@@ -375,20 +391,43 @@ function updateAttribution(e) {
 map.on("layeradd", updateAttribution);
 map.on("layerremove", updateAttribution);
 
-var attributionControl = L.control({
-  position: "bottomright"
-});
-attributionControl.onAdd = function (map) {
-  var div = L.DomUtil.create("div", "leaflet-control-attribution");
-  div.innerHTML = "<span class='hidden-xs'>TODO: to be filled by i18next</a>";
-//  div.innerHTML = "<span class='hidden-xs'>Developed by <a href='https://weberius.github.io/' target='_new'>Wolfram Eberius (OK Lab Köln)</a> | </span><a href='#' onclick='$(\"#attributionModal\").modal(\"show\"); return false;'>Attribution</a>";
-  return div;
-};
-map.addControl(attributionControl);
+
+/**************************************************************************************************/
+// attributionControl
+/**************************************************************************************************/
+loadAttributionControl();
+
+function loadAttributionControl() {
+
+    var attributionControl = L.control({
+      position: "bottomright"
+    });
+    attributionControl.onAdd = function (map) {
+      var div = L.DomUtil.create("div", "leaflet-control-attribution");
+
+      var url = 'locales/' + languageCode + '/' + namespace + '/attributionControl.html';
+      fetch(url).then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text(); // Die Antwort als Text abrufen
+      }).then(htmlFragment => {
+        // Das HTML-Fragment in den DOM einfügen
+        div.innerHTML = htmlFragment;
+      }).catch(error => {
+        console.error('Beim Abrufen des HTML-Fragments ist ein Fehler aufgetreten:', error);
+      });
+
+      return div;
+    };
+
+    map.addControl(attributionControl);
+}
 
 var zoomControl = L.control.zoom({
   position: "bottomright"
 }).addTo(map);
+
 
 /* GPS enabled geolocation control set to follow the user's location */
 var locateControl = L.control.locate({
@@ -657,3 +696,63 @@ class URLParameterPoi extends URLParameter {
 new Downloader(new URLParameterGPX()).buildDownload();
 new Downloader(new URLParameterPoi()).buildDownload();
 
+/**************************************************************************************************/
+// ATTRIBUTION MODAL MENU
+/**************************************************************************************************/
+
+class AttributionModal {
+
+    build() {
+        const url = 'locales/' + languageCode + '/' + namespace + '/attribution.html';
+        fetch(url).then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.text(); // Die Antwort als Text abrufen
+        }).then(htmlFragment => {
+            // Das HTML-Fragment in den DOM einfügen
+            const attributionModalDiv = document.getElementById('attributionModal');
+            attributionModalDiv.innerHTML = htmlFragment;
+        }).catch(error => {
+            console.error('Beim Abrufen des HTML-Fragments ist ein Fehler aufgetreten:', error);
+        });
+    }
+}
+
+class DisclaimerModal {
+
+    build() {
+        const url = 'locales/' + languageCode + '/' + namespace + '/disclaimer.html';
+        fetch(url).then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.text(); // Die Antwort als Text abrufen
+        }).then(htmlFragment => {
+            // Das HTML-Fragment in den DOM einfügen
+            const attributionModalDiv = document.getElementById('disclaimer');
+            attributionModalDiv.innerHTML = htmlFragment;
+        }).catch(error => {
+            console.error('Beim Abrufen des HTML-Fragments ist ein Fehler aufgetreten:', error);
+        });
+    }
+}
+
+class AboutModal {
+
+    build() {
+        const url = 'locales/' + languageCode + '/' + namespace + '/about.html';
+        fetch(url).then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.text(); // Die Antwort als Text abrufen
+        }).then(htmlFragment => {
+            // Das HTML-Fragment in den DOM einfügen
+            const attributionModalDiv = document.getElementById('about');
+            attributionModalDiv.innerHTML = htmlFragment;
+        }).catch(error => {
+            console.error('Beim Abrufen des HTML-Fragments ist ein Fehler aufgetreten:', error);
+        });
+    }
+}
