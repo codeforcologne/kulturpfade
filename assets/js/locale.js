@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .init({
         lng: 'de',
         fallbackLng: 'de',
-        debug: true,
+        debug: false,
         i18nextHttpBackend: {
            loadPath: './locales/{{lng}}/{{ns}}.json',
         },
@@ -42,6 +42,12 @@ function updateContent() {
     document.getElementById('closeBtnLegendModal').innerHTML = i18next.t('closeBtn');
     document.getElementById('closeBtnFeatureModel').innerHTML = i18next.t('closeBtn');
     document.getElementById('languageSelectorA').innerHTML = i18next.t('language');
+    document.getElementById('routeSelectorSpan').innerHTML = i18next.t('zoom');
+    document.getElementById('routeSelectorSpan').innerHTML = i18next.t('route');
+    document.getElementById('poisSelectorSpan').innerHTML = i18next.t('pois');
+    document.getElementById('downloadSelectorSpan').innerHTML = i18next.t('download');
+    document.getElementById('poisPanelTitle').innerHTML = i18next.t('pois');
+
     document.getElementById('welcomeModelTitle').innerHTML = i18next.t('welcomeModelTitle');
     loadPoiLayer();
     // remove languageSelectorUl innerHTML before setting new
@@ -71,16 +77,15 @@ class LanguageSelector {
         lng = i18next.t(this.language);
         newLi = document.createElement('li');
         if (this.language === language) {
-          newLi.innerHTML = '<li>&nbsp;&nbsp;<i class="fa fa-language"></i>&nbsp;&nbsp;' + lng + '</li>';
+          newLi.innerHTML = '<li>&nbsp;&nbsp;' + lng + '</li>';
         } else {
-          newLi.innerHTML = '<li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="changeLanguage(\'' + this.language + '\')">&nbsp;&nbsp;<i class="fa fa-language"></i>&nbsp;&nbsp;' + lng + '</a></li>';
+          newLi.innerHTML = '<li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="changeLanguage(\'' + this.language + '\')">&nbsp;&nbsp;' + lng + '</a></li>';
         }
         targetElement = document.getElementById('languageSelectorUl');
         targetElement.appendChild(newLi);
     }
 
 }
-
 
 // Funktion zur Sprachumschaltung
 function changeLanguage(language) {
