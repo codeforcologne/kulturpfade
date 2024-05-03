@@ -57,6 +57,7 @@ function updateContent() {
     new LanguageSelector('en').build(i18next.language);
     new AttributionModal().build();
     new DisclaimerModal().build();
+    new LinksModal().build();
     new AboutModal().build();
     new RouteModal().build();
 }
@@ -79,9 +80,9 @@ class LanguageSelector {
         lng = i18next.t(this.language);
         newLi = document.createElement('li');
         if (this.language === language) {
-          newLi.innerHTML = '<li>&nbsp;&nbsp;' + lng + '</li>';
+          newLi.innerHTML = '<li>&nbsp;&nbsp;<i class="bi bi-translate"></i>&nbsp;&nbsp;' + lng + '</li>';
         } else {
-          newLi.innerHTML = '<li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="changeLanguage(\'' + this.language + '\')">&nbsp;&nbsp;' + lng + '</a></li>';
+          newLi.innerHTML = '<li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="changeLanguage(\'' + this.language + '\')">&nbsp;&nbsp;<i class="bi bi-translate"></i>&nbsp;&nbsp;' + lng + '</a></li>';
         }
         targetElement = document.getElementById('languageSelectorUl');
         targetElement.appendChild(newLi);
