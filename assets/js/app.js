@@ -775,3 +775,22 @@ class RouteModal {
         });
     }
 }
+
+class LinksModal {
+
+     build() {
+         const url = 'locales/' + languageCode + '/' + namespace + '/links.html';
+         fetch(url).then(response => {
+             if (!response.ok) {
+               throw new Error('Network response was not ok');
+             }
+             return response.text(); // Die Antwort als Text abrufen
+         }).then(htmlFragment => {
+             // Das HTML-Fragment in den DOM einfügen
+             const attributionModalDiv = document.getElementById('links');
+             attributionModalDiv.innerHTML = htmlFragment;
+         }).catch(error => {
+             console.error('Beim Abrufen des HTML-Fragments ist ein Fehler aufgetreten:', error);
+         });
+     }
+ }
