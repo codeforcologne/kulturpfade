@@ -10,13 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
   if (typeof i18next !== 'undefined' && typeof i18nextHttpBackend !== 'undefined') {
     i18next
       .use(i18nextHttpBackend)
-      .use(window.i18nextBrowserLanguageDetector)
       .init({
         lng: 'de',
         fallbackLng: 'de',
         debug: true,
         i18nextHttpBackend: {
-           loadPath: './assets/{{lng}}/{{ns}}.json'
+           loadPath: './locales/{{lng}}/{{ns}}.json',
         },
         ns: namespace
       }, function(err, t) {
