@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function updateContent() {
     document.title = i18next.t('title');
     document.getElementById('brand').innerHTML = i18next.t('brand');
+    document.getElementById('routeModal').innerHTML = i18next.t('brand');
     document.getElementById('closeBtnAboutModal').innerHTML = i18next.t('closeBtn');
     document.getElementById('closeBtnLegendModal').innerHTML = i18next.t('closeBtn');
     document.getElementById('closeBtnFeatureModel').innerHTML = i18next.t('closeBtn');
@@ -47,8 +48,8 @@ function updateContent() {
     document.getElementById('poisSelectorSpan').innerHTML = i18next.t('pois');
     document.getElementById('downloadSelectorSpan').innerHTML = i18next.t('download');
     document.getElementById('poisPanelTitle').innerHTML = i18next.t('pois');
-
     document.getElementById('welcomeModelTitle').innerHTML = i18next.t('welcomeModelTitle');
+
     loadPoiLayer();
     // remove languageSelectorUl innerHTML before setting new
     document.getElementById('languageSelectorUl').innerHTML = '';
@@ -57,6 +58,7 @@ function updateContent() {
     new AttributionModal().build();
     new DisclaimerModal().build();
     new AboutModal().build();
+    new RouteModal().build();
 }
 
 /**
