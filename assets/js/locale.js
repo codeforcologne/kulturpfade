@@ -42,7 +42,7 @@ function updateContent() {
     document.getElementById('closeBtnLegendModal').innerHTML = i18next.t('closeBtn');
     document.getElementById('closeBtnFeatureModel').innerHTML = i18next.t('closeBtn');
     document.getElementById('languageSelectorA').innerHTML = i18next.t('language');
-    document.getElementById('routeSelectorSpan').innerHTML = i18next.t('zoom');
+    document.getElementById('zoomSelectorSpan').innerHTML = i18next.t('zoom');
     document.getElementById('routeSelectorSpan').innerHTML = i18next.t('route');
     document.getElementById('poisSelectorSpan').innerHTML = i18next.t('pois');
     document.getElementById('downloadSelectorSpan').innerHTML = i18next.t('download');
