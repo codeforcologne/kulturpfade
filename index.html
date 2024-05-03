@@ -12,13 +12,14 @@
   <title>Kulturpfade Köln</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.79.0/L.Control.Locate.css">
   <link rel="stylesheet" href="//cdn.datatables.net/2.0.3/css/dataTables.dataTables.min.css">
-  <link rel="stylesheet" href="assets/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.css">
+  <link rel="stylesheet" href="assets/leaflet/leaflet.groupedlayercontrol.css">
   <link rel="stylesheet" href="assets/css/app.css">
 
   <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon-76.png">
@@ -34,7 +35,6 @@
     <div class="navbar-header">
       <div class="navbar-icon-container">
         <a href="#" class="navbar-icon pull-right visible-xs" id="nav-btn"><i class="fa fa-bars fa-lg white"></i></a>
-        <a href="#" class="navbar-icon pull-right visible-xs" id="sidebar-toggle-btn"><i class="fa fa-search fa-lg white"></i></a>
       </div>
       <a class="navbar-brand" href="#" id="brand">Pfade</a>
     </div>
@@ -46,22 +46,22 @@
         </div>
       </form>
       <ul class="nav navbar-nav">
-        <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="full-extent-btn"><i class="fa fa-arrows-alt"></i>&nbsp;Zoom</a></li>
-        <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="legend-btn"><i class="fa fa-picture-o"></i>&nbsp;Kulturpfad</a></li>
+        <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="full-extent-btn"><i class="bi bi-arrows-fullscreen"></i>&nbsp;<span id="routeSelectorSpan">Zoom</span></a></li>
+        <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="legend-btn"><i class="bi bi-table"></i>&nbsp;<span id="routeSelectorSpan">Route</span></a></li>
         <li class="dropdown">
-          <a class="dropdown-toggle" id="downloadDrop" href="#" role="button" data-toggle="dropdown"><i class="fa fa-cloud-download white"></i>&nbsp;&nbsp;Download <b class="caret"></b></a>
+          <a class="dropdown-toggle" id="downloadDrop" href="#" role="button" data-toggle="dropdown"><i class="bi bi-cloud-download"></i>&nbsp;&nbsp;<span id="downloadSelectorSpan">Download</span> <b class="caret"></b></a>
           <ul class="dropdown-menu" id="downloadDropUl">
             <!-- content will be injected by Class Downloader -->
           </ul>
         </li>
         <li class="dropdown">
-          <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe white"></i>&nbsp;&nbsp;<span id="languageSelectorA">Sprache</span><b class="caret"></b></a>
+          <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="bi bi-globe2"></i>&nbsp;&nbsp;<span id="languageSelectorA">Sprache</span><b class="caret"></b></a>
           <ul class="dropdown-menu" id="languageSelectorUl">
             <!-- content will be injected by Class LanguageSelector -->
           </ul>
         </li>
-        <li class="hidden-xs"><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="list-btn"><i class="fa fa-list white"></i>&nbsp;&nbsp;POI List</a></li>
-        <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="about-btn"><i class="fa fa-question-circle white"></i>&nbsp;&nbsp;About</a></li>
+        <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="list-btn"><i class="bi bi-layout-text-sidebar"></i>&nbsp;&nbsp;<span id="poisSelectorSpan">POIs</span></a></li>
+        <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="about-btn"><i class="bi bi-question-circle"></i>&nbsp;&nbsp;About</a></li>
       </ul>
     </div><!--/.navbar-collapse -->
   </div>
@@ -72,8 +72,8 @@
     <div class="sidebar-wrapper">
       <div class="panel panel-default" id="features">
         <div class="panel-heading">
-          <h3 class="panel-title">Sehenswürdigkeiten
-            <button type="button" class="btn btn-xs btn-default pull-right" id="sidebar-hide-btn"><i class="fa fa-chevron-left"></i></button></h3>
+          <h3 class="panel-title"><span id="poisPanelTitle">POIs</span>
+            <button type="button" class="btn btn-xs btn-default pull-right" id="sidebar-hide-btn"><i class="bi bi-chevron-left"></i></button></h3>
         </div>
         <div class="sidebar-table">
           <table class="table table-hover" id="feature-list">

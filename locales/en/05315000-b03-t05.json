@@ -3,7 +3,11 @@
   "brand": "Cultural Paths Lindenthal Tour 5",
   "welcomeModelTitle":"Welcome to Cultural Paths",
   "closeBtn": "close",
+  "zoom": "Zoom",
+  "download": "Download",
   "language": "Language",
+  "pois": "Points Of Interest",
+  "route": "Route",
   "en": "english",
   "de": "deutsch"
 }
