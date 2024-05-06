@@ -435,6 +435,7 @@ var locateControl = L.control.locate({
   drawCircle: true,
   follow: true,
   setView: true,
+  showCompass: true,
   keepCurrentZoomLevel: true,
   markerStyle: {
     weight: 1,
@@ -442,10 +443,9 @@ var locateControl = L.control.locate({
     fillOpacity: 0.8
   },
   circleStyle: {
-    weight: 1,
+    weight: 5,
     clickable: false
   },
-  icon: "fa fa-location-arrow",
   metric: false,
   strings: {
     title: "My location",
@@ -712,6 +712,25 @@ class AttributionModal {
         }).then(htmlFragment => {
             // Das HTML-Fragment in den DOM einfügen
             const attributionModalDiv = document.getElementById('attributionModal');
+            attributionModalDiv.innerHTML = htmlFragment;
+        }).catch(error => {
+            console.error('Beim Abrufen des HTML-Fragments ist ein Fehler aufgetreten:', error);
+        });
+    }
+}
+
+class FeaturesModal {
+
+    build() {
+        const url = 'locales/' + languageCode + '/' + namespace + '/features.html';
+        fetch(url).then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.text(); // Die Antwort als Text abrufen
+        }).then(htmlFragment => {
+            // Das HTML-Fragment in den DOM einfügen
+            const attributionModalDiv = document.getElementById('featuresModal');
             attributionModalDiv.innerHTML = htmlFragment;
         }).catch(error => {
             console.error('Beim Abrufen des HTML-Fragments ist ein Fehler aufgetreten:', error);

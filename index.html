@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.79.0/L.Control.Locate.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.81.0/L.Control.Locate.css">
   <link rel="stylesheet" href="//cdn.datatables.net/2.0.3/css/dataTables.dataTables.min.css">
   <link rel="stylesheet" href="assets/leaflet/leaflet.groupedlayercontrol.css">
   <link rel="stylesheet" href="assets/css/app.css">
@@ -113,13 +113,17 @@
       </div>
       <div class="modal-body">
         <ul class="nav nav-tabs nav-justified" id="aboutTabs">
-          <li class="active"><a href="#about" data-toggle="tab"><i class="bi bi-question-circle"></i>&nbsp;About the project</a></li>
+          <li class="active"><a href="#about" data-toggle="tab"><i class="bi bi-question-circle"></i>&nbsp;Über das Projekt</a></li>
+          <li><a href="#featuresModal" data-toggle="tab"><i class="bi bi-ui-checks"></i>&nbsp;Features</a></li>
           <li><a href="#disclaimer" data-toggle="tab"><i class="bi bi-exclamation-circle"></i>&nbsp;Disclaimer</a></li>
           <li><a href="#links" data-toggle="tab"><i class="bi bi-bookmark-star"></i>&nbsp;Links</a></li>
         </ul>
         <div class="tab-content" id="aboutTabsContent">
           <div class="tab-pane fade active in" id="about">
             <!-- will be set by class AboutModal -->
+          </div>
+          <div class="tab-pane fade" id="featuresModal">
+            <!-- will be set by class FeaturesModal -->
           </div>
           <div class="tab-pane fade text-danger" id="disclaimer">
             <!-- will be set by class DisclaimerModal -->
@@ -179,7 +183,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.79.0/L.Control.Locate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.81.0/L.Control.Locate.min.js"></script>
 <script src="https://cdn.datatables.net/2.0.3/js/dataTables.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/23.11.1/i18next.min.js"></script>
