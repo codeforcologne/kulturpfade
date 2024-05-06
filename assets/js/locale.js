@@ -57,6 +57,7 @@ function updateContent() {
     new LanguageSelector('en').build(i18next.language);
     new AttributionModal().build();
     new DisclaimerModal().build();
+    new FeaturesModal().build();
     new LinksModal().build();
     new AboutModal().build();
     new RouteModal().build();
