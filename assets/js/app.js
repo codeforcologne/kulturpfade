@@ -1,4 +1,4 @@
-var map, featureList, routeSearch = [], poiSearch = [];
+var map, featureList;
 var urlroute, urlpoi;
 
 var namespace;
@@ -185,12 +185,6 @@ var routes = L.geoJson(null, {
     };
   },
   onEachFeature: function (feature, layer) {
-    routeSearch.push({
-      name: layer.feature.properties.name,
-      source: "routes",
-      id: L.stamp(layer),
-      bounds: layer.getBounds()
-    });
     layer.on({
        click: function (e) {
          $("#feature-title").html("Entfernung");
@@ -298,14 +292,6 @@ var pois = L.geoJson(null, {
       + layer.feature.properties.name
       + '</div>', tooltipOptions).openTooltip();
 
-      poiSearch.push({
-        name: layer.feature.properties.name,
-        address: layer.feature.properties.id,
-        source: "pois",
-        id: L.stamp(layer),
-        lat: layer.feature.geometry.coordinates[1],
-        lng: layer.feature.geometry.coordinates[0]
-      });
     }
   }
 });
@@ -485,99 +471,18 @@ var layerControl = L.control.groupedLayers(baseLayers, groupedOverlays, {
   collapsed: isCollapsed
 }).addTo(map);
 
-/* Highlight search box text on click */
-$("#searchbox").click(function () {
-  $(this).select();
-});
-
-/* Prevent hitting enter from refreshing the page */
-$("#searchbox").keypress(function (e) {
-  if (e.which == 13) {
-    e.preventDefault();
-  }
-});
 
 $("#featureModal").on("hidden.bs.modal", function (e) {
   $(document).on("mouseout", ".feature-row", clearHighlight);
 });
 
-/* Typeahead search functionality */
+/**************************************************************************************************/
+// AJAX STOP; do something if all is loaded
+/**************************************************************************************************/
 $(document).one("ajaxStop", function () {
-  $("#loading").hide();
   sizeLayerControl();
   /* Fit map to routes bounds */
   map.fitBounds(routes.getBounds());
-  featureList = new List("features", {valueNames: ["feature-name"]});
-  featureList.sort("feature-nr", {order:"asc"});
-
-  var routesBH = new Bloodhound({
-    name: "routes",
-    datumTokenizer: function (d) {
-      return Bloodhound.tokenizers.whitespace(d.name);
-    },
-    queryTokenizer: Bloodhound.tokenizers.whitespace,
-    local: routeSearch,
-    limit: 10
-  });
-
-  var poisBH = new Bloodhound({
-    name: "pois",
-    datumTokenizer: function (d) {
-      return Bloodhound.tokenizers.whitespace(d.name);
-    },
-    queryTokenizer: Bloodhound.tokenizers.whitespace,
-    local: poiSearch,
-    limit: 10
-  });
-
-  routesBH.initialize();
-  poisBH.initialize();
-
-  /* instantiate the typeahead UI */
-  $("#searchbox").typeahead({
-    minLength: 3,
-    highlight: true,
-    hint: false
-  }, {
-    name: "routes",
-    displayKey: "name",
-    source: routesBH.ttAdapter(),
-    templates: {
-      header: "<h4 class='typeahead-header'>Routes</h4>"
-    }
-  }, {
-    name: "pois",
-    displayKey: "name",
-    source: poisBH.ttAdapter(),
-    templates: {
-      header: "<h4 class='typeahead-header'>&nbsp;Sehenswürdigkeiten</h4>",
-      suggestion: Handlebars.compile(["{{name}}"].join(""))
-    }
-  }).on("typeahead:selected", function (obj, datum) {
-    if (datum.source === "routes") {
-      map.fitBounds(datum.bounds);
-    }
-    if (datum.source === "pois") {
-      if (!map.hasLayer(poiLayer)) {
-        map.addLayer(poiLayer);
-      }
-      map.setView([datum.lat, datum.lng], 17);
-      if (map._layers[datum.id]) {
-        map._layers[datum.id].fire("click");
-      }
-    }
-    if ($(".navbar-collapse").height() > 50) {
-      $(".navbar-collapse").collapse("hide");
-    }
-  }).on("typeahead:opened", function () {
-    $(".navbar-collapse.in").css("max-height", $(document).height() - $(".navbar-header").height());
-    $(".navbar-collapse.in").css("height", $(document).height() - $(".navbar-header").height());
-  }).on("typeahead:closed", function () {
-    $(".navbar-collapse.in").css("max-height", "");
-    $(".navbar-collapse.in").css("height", "");
-  });
-  $(".twitter-typeahead").css("position", "static");
-  $(".twitter-typeahead").css("display", "block");
 });
 
 // Leaflet patch to make layer control scrollable on touch browsers

@@ -39,12 +39,6 @@
       <a class="navbar-brand" href="#" id="brand">Pfade</a>
     </div>
     <div class="navbar-collapse collapse">
-      <form class="navbar-form navbar-right" role="search">
-        <div class="form-group has-feedback">
-          <input id="searchbox" type="text" placeholder="Search" class="form-control">
-          <span id="searchicon" class="fa fa-search form-control-feedback"></span>
-        </div>
-      </form>
       <ul class="nav navbar-nav">
         <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="full-extent-btn"><i class="bi bi-arrows-fullscreen"></i>&nbsp;<span id="zoomSelectorSpan">Zoom</span></a></li>
         <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="legend-btn"><i class="bi bi-table"></i>&nbsp;<span id="routeSelectorSpan">Route</span></a></li>
@@ -96,13 +90,6 @@
   </div>
   <div id="map"></div>
 </div>
-<div id="loading">
-  <div class="loading-indicator">
-    <div class="progress progress-striped active">
-      <div class="progress-bar progress-bar-info progress-bar-full"></div>
-    </div>
-  </div>
-</div>
 
 <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-lg">
@@ -113,7 +100,7 @@
       </div>
       <div class="modal-body">
         <ul class="nav nav-tabs nav-justified" id="aboutTabs">
-          <li class="active"><a href="#expectModal" data-toggle="tab"><i class="bi bi-question-circle"></i>&nbsp;Was mich erwartet</a></li>
+          <li class="active"><a href="#expectModal" data-toggle="tab"><i class="bi bi-person-check"></i>&nbsp;Was mich erwartet</a></li>
           <li><a href="#about" data-toggle="tab"><i class="bi bi-question-circle"></i>&nbsp;Über das Projekt</a></li>
           <li><a href="#featuresModal" data-toggle="tab"><i class="bi bi-ui-checks"></i>&nbsp;Features</a></li>
           <li><a href="#links" data-toggle="tab"><i class="bi bi-bookmark-star"></i>&nbsp;Links</a></li>
@@ -182,7 +169,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.5/typeahead.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
