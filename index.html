@@ -113,23 +113,27 @@
       </div>
       <div class="modal-body">
         <ul class="nav nav-tabs nav-justified" id="aboutTabs">
-          <li class="active"><a href="#about" data-toggle="tab"><i class="bi bi-question-circle"></i>&nbsp;Über das Projekt</a></li>
+          <li class="active"><a href="#expectModal" data-toggle="tab"><i class="bi bi-question-circle"></i>&nbsp;Was mich erwartet</a></li>
+          <li><a href="#about" data-toggle="tab"><i class="bi bi-question-circle"></i>&nbsp;Über das Projekt</a></li>
           <li><a href="#featuresModal" data-toggle="tab"><i class="bi bi-ui-checks"></i>&nbsp;Features</a></li>
-          <li><a href="#disclaimer" data-toggle="tab"><i class="bi bi-exclamation-circle"></i>&nbsp;Disclaimer</a></li>
           <li><a href="#links" data-toggle="tab"><i class="bi bi-bookmark-star"></i>&nbsp;Links</a></li>
+          <li><a href="#disclaimerModal" data-toggle="tab"><i class="bi bi-exclamation-circle"></i>&nbsp;Disclaimer</a></li>
         </ul>
         <div class="tab-content" id="aboutTabsContent">
-          <div class="tab-pane fade active in" id="about">
+          <div class="tab-pane fade active in" id="expectModal">
+            <!-- will be set by class ExpectModal -->
+          </div>
+          <div class="tab-pane fade" id="about">
             <!-- will be set by class AboutModal -->
           </div>
           <div class="tab-pane fade" id="featuresModal">
             <!-- will be set by class FeaturesModal -->
           </div>
-          <div class="tab-pane fade text-danger" id="disclaimer">
-            <!-- will be set by class DisclaimerModal -->
-          </div>
           <div class="tab-pane fade" id="links">
             <!-- will be set by class LinksModal -->
+          </div>
+          <div class="tab-pane fade text-danger" id="disclaimerModal">
+            <!-- will be set by class DisclaimerModal -->
           </div>
         </div>
       </div>

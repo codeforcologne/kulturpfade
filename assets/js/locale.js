@@ -59,6 +59,7 @@ function updateContent() {
     new DisclaimerModal().build();
     new FeaturesModal().build();
     new LinksModal().build();
+    new ExpectModal().build();
     new AboutModal().build();
     new RouteModal().build();
 }
