@@ -32,7 +32,7 @@ if ( !("ontouchstart" in window) ) {
 $(document).on("mouseout", ".feature-row", clearHighlight);
 
 $("#about-btn").click(function() {
-  $("#aboutModal").modal("show");
+  $("#aboutModalDiv").modal("show");
   $(".navbar-collapse.in").collapse("hide");
   return false;
 });
@@ -662,25 +662,6 @@ class DisclaimerModal {
     }
 }
 
-class AboutModal {
-
-    build() {
-        const url = 'locales/' + languageCode + '/' + namespace + '/about.html';
-        fetch(url).then(response => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return response.text(); // Die Antwort als Text abrufen
-        }).then(htmlFragment => {
-            // Das HTML-Fragment in den DOM einfügen
-            const attributionModalDiv = document.getElementById('about');
-            attributionModalDiv.innerHTML = htmlFragment;
-        }).catch(error => {
-            console.error('Beim Abrufen des HTML-Fragments ist ein Fehler aufgetreten:', error);
-        });
-    }
-}
-
 class RouteModal {
 
     build() {
@@ -731,6 +712,30 @@ class ExpectModal {
          }).then(htmlFragment => {
              // Das HTML-Fragment in den DOM einfügen
              const attributionModalDiv = document.getElementById('expectModal');
+             attributionModalDiv.innerHTML = htmlFragment;
+         }).catch(error => {
+             console.error('Beim Abrufen des HTML-Fragments ist ein Fehler aufgetreten:', error);
+         });
+     }
+
+}
+
+/**
+* Klasse, um html fragmente in Abhaengigkeit von der Sprache in den DOM-Tree einzufuegen.
+* Benutzung: new ModalBuilder('aboutModal').build(i18next.language);
+*/
+class ModalBuilder {
+
+     build(elementByid, language) {
+         const url = 'locales/' + languageCode + '/' + namespace + '/' + elementByid + '.html';
+         fetch(url).then(response => {
+             if (!response.ok) {
+               throw new Error('Network response was not ok');
+             }
+             return response.text(); // Die Antwort als Text abrufen
+         }).then(htmlFragment => {
+             // Das HTML-Fragment in den DOM einfügen
+             const attributionModalDiv = document.getElementById(elementByid);
              attributionModalDiv.innerHTML = htmlFragment;
          }).catch(error => {
              console.error('Beim Abrufen des HTML-Fragments ist ein Fehler aufgetreten:', error);

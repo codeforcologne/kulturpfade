@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function updateContent() {
+
     document.title = i18next.t('title');
     document.getElementById('brand').innerHTML = i18next.t('brand');
     document.getElementById('routeModal').innerHTML = i18next.t('brand');
@@ -60,7 +61,7 @@ function updateContent() {
     new FeaturesModal().build();
     new LinksModal().build();
     new ExpectModal().build();
-    new AboutModal().build();
+    new ModalBuilder().build('aboutModal');
     new RouteModal().build();
 }
 
