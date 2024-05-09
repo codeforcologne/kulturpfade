@@ -56,6 +56,7 @@ function updateContent() {
     document.getElementById('languageSelectorUl').innerHTML = '';
     new LanguageSelector('de').build(i18next.language);
     new LanguageSelector('en').build(i18next.language);
+    new ModalBuilder().build('aboutTabsHeader');
     new AttributionModal().build();
     new DisclaimerModal().build();
     new FeaturesModal().build();
