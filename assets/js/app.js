@@ -255,7 +255,7 @@ var pois = L.geoJson(null, {
     if (feature.properties) {
 
       var content = "";
-      var url = 'locales/' + languageCode + '/' + namespace + '/p' + feature.properties.nr + '.html';
+      var url = 'locales/' + namespace + '/' + languageCode + '/p' + feature.properties.nr + '.html';
 
       fetch(url).then(response => {
         if (!response.ok) {
@@ -391,7 +391,7 @@ function loadAttributionControl() {
     attributionControl.onAdd = function (map) {
       var div = L.DomUtil.create("div", "leaflet-control-attribution");
 
-      var url = 'locales/' + languageCode + '/' + namespace + '/attributionControl.html';
+      var url = 'locales/' + namespace + '/' + languageCode + '/attributionControl.html';
       fetch(url).then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -609,7 +609,7 @@ new Downloader(new URLParameterPoi()).buildDownload();
 class ModalBuilder {
 
      build(elementByid, language) {
-         const url = 'locales/' + languageCode + '/' + namespace + '/' + elementByid + '.html';
+         const url = 'locales/' + namespace + '/' + languageCode + '/' + elementByid + '.html';
          fetch(url).then(response => {
              if (!response.ok) {
                throw new Error('Network response was not ok');

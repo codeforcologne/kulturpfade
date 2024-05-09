@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fallbackLng: 'de',
         debug: false,
         i18nextHttpBackend: {
-           loadPath: './locales/{{lng}}/{{ns}}.json',
+           loadPath: './locales/{{ns}}/{{lng}}/properties.json', //path has to be defined in 'assets/i18next/i18nextHttpBackend.js'; checkout readme.txt
         },
         ns: namespace
       }, function(err, t) {

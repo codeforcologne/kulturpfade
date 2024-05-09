@@ -40,7 +40,7 @@ function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" 
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 var getDefaults = function getDefaults() {
   return {
-    loadPath: './locales/{{lng}}/{{ns}}.json',
+    loadPath: './locales/{{ns}}/{{lng}}/properties.json',
     addPath: './locales/add/{{lng}}/{{ns}}',
     parse: function parse(data) {
       return JSON.parse(data);
