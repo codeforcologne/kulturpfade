@@ -1,6 +1,6 @@
 {
   "title":"Kulturpfad Köln",
-  "brand": "Kulturpfade Lindenthal Tour 4",
+  "brand": "Kulturpfade Lindenthal Tour 1",
   "welcomeModelTitle":"Willkommen zu den Kulturpfaden",
   "closeBtn": "Schliessen",
   "zoom": "Zoom",
@@ -9,5 +9,9 @@
   "pois": "Sehenswürdigkeiten",
   "route": "Route",
   "en": "english",
-  "de": "deutsch"
+  "de": "deutsch",
+  "fr": "français",
+  "tr": "Türkçe",
+  "ja": "日本語",
+  "languages": ["de", "en"]
 }

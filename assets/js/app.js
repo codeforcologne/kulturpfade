@@ -255,7 +255,7 @@ var pois = L.geoJson(null, {
     if (feature.properties) {
 
       var content = "";
-      var url = 'locales/' + languageCode + '/' + namespace + '/p' + feature.properties.nr + '.html';
+      var url = 'locales/' + namespace + '/' + languageCode + '/p' + feature.properties.nr + '.html';
 
       fetch(url).then(response => {
         if (!response.ok) {
@@ -391,7 +391,7 @@ function loadAttributionControl() {
     attributionControl.onAdd = function (map) {
       var div = L.DomUtil.create("div", "leaflet-control-attribution");
 
-      var url = 'locales/' + languageCode + '/' + namespace + '/attributionControl.html';
+      var url = 'locales/' + namespace + '/' + languageCode + '/attributionControl.html';
       fetch(url).then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -601,124 +601,6 @@ class URLParameterPoi extends URLParameter {
 new Downloader(new URLParameterGPX()).buildDownload();
 new Downloader(new URLParameterPoi()).buildDownload();
 
-/**************************************************************************************************/
-// ATTRIBUTION MODAL MENU
-/**************************************************************************************************/
-
-class AttributionModal {
-
-    build() {
-        const url = 'locales/' + languageCode + '/' + namespace + '/attribution.html';
-        fetch(url).then(response => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return response.text(); // Die Antwort als Text abrufen
-        }).then(htmlFragment => {
-            // Das HTML-Fragment in den DOM einfügen
-            const attributionModalDiv = document.getElementById('attributionModal');
-            attributionModalDiv.innerHTML = htmlFragment;
-        }).catch(error => {
-            console.error('Beim Abrufen des HTML-Fragments ist ein Fehler aufgetreten:', error);
-        });
-    }
-}
-
-class FeaturesModal {
-
-    build() {
-        const url = 'locales/' + languageCode + '/' + namespace + '/features.html';
-        fetch(url).then(response => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return response.text(); // Die Antwort als Text abrufen
-        }).then(htmlFragment => {
-            // Das HTML-Fragment in den DOM einfügen
-            const attributionModalDiv = document.getElementById('featuresModal');
-            attributionModalDiv.innerHTML = htmlFragment;
-        }).catch(error => {
-            console.error('Beim Abrufen des HTML-Fragments ist ein Fehler aufgetreten:', error);
-        });
-    }
-}
-
-class DisclaimerModal {
-
-    build() {
-        const url = 'locales/' + languageCode + '/' + namespace + '/disclaimer.html';
-        fetch(url).then(response => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return response.text(); // Die Antwort als Text abrufen
-        }).then(htmlFragment => {
-            // Das HTML-Fragment in den DOM einfügen
-            const attributionModalDiv = document.getElementById('disclaimerModal');
-            attributionModalDiv.innerHTML = htmlFragment;
-        }).catch(error => {
-            console.error('Beim Abrufen des HTML-Fragments ist ein Fehler aufgetreten:', error);
-        });
-    }
-}
-
-class RouteModal {
-
-    build() {
-        const url = 'locales/' + languageCode + '/' + namespace + '/route.html';
-        fetch(url).then(response => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return response.text(); // Die Antwort als Text abrufen
-        }).then(htmlFragment => {
-            // Das HTML-Fragment in den DOM einfügen
-            const attributionModalDiv = document.getElementById('routModalBody');
-            attributionModalDiv.innerHTML = htmlFragment;
-        }).catch(error => {
-            console.error('Beim Abrufen des HTML-Fragments ist ein Fehler aufgetreten:', error);
-        });
-    }
-}
-
-class LinksModal {
-
-     build() {
-         const url = 'locales/' + languageCode + '/' + namespace + '/links.html';
-         fetch(url).then(response => {
-             if (!response.ok) {
-               throw new Error('Network response was not ok');
-             }
-             return response.text(); // Die Antwort als Text abrufen
-         }).then(htmlFragment => {
-             // Das HTML-Fragment in den DOM einfügen
-             const attributionModalDiv = document.getElementById('links');
-             attributionModalDiv.innerHTML = htmlFragment;
-         }).catch(error => {
-             console.error('Beim Abrufen des HTML-Fragments ist ein Fehler aufgetreten:', error);
-         });
-     }
- }
-
-class ExpectModal {
-
-     build() {
-         const url = 'locales/' + languageCode + '/' + namespace + '/expect.html';
-         fetch(url).then(response => {
-             if (!response.ok) {
-               throw new Error('Network response was not ok');
-             }
-             return response.text(); // Die Antwort als Text abrufen
-         }).then(htmlFragment => {
-             // Das HTML-Fragment in den DOM einfügen
-             const attributionModalDiv = document.getElementById('expectModal');
-             attributionModalDiv.innerHTML = htmlFragment;
-         }).catch(error => {
-             console.error('Beim Abrufen des HTML-Fragments ist ein Fehler aufgetreten:', error);
-         });
-     }
-
-}
 
 /**
 * Klasse, um html fragmente in Abhaengigkeit von der Sprache in den DOM-Tree einzufuegen.
@@ -727,7 +609,7 @@ class ExpectModal {
 class ModalBuilder {
 
      build(elementByid, language) {
-         const url = 'locales/' + languageCode + '/' + namespace + '/' + elementByid + '.html';
+         const url = 'locales/' + namespace + '/' + languageCode + '/' + elementByid + '.html';
          fetch(url).then(response => {
              if (!response.ok) {
                throw new Error('Network response was not ok');
