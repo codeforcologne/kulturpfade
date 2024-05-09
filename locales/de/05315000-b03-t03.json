@@ -9,5 +9,7 @@
   "pois": "Sehenswürdigkeiten",
   "route": "Route",
   "en": "english",
-  "de": "deutsch"
+  "de": "deutsch",
+  "fr": "français",
+  "languages": ["de", "en"]
 }

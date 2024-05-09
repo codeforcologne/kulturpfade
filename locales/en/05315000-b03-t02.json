@@ -9,5 +9,7 @@
   "pois": "Points Of Interest",
   "route": "Route",
   "en": "english",
-  "de": "deutsch"
+  "de": "deutsch",
+  "fr": "français",
+  "languages": ["de", "en"]
 }
