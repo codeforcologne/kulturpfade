@@ -735,8 +735,8 @@ class ModalBuilder {
              return response.text(); // Die Antwort als Text abrufen
          }).then(htmlFragment => {
              // Das HTML-Fragment in den DOM einfügen
-             const attributionModalDiv = document.getElementById(elementByid);
-             attributionModalDiv.innerHTML = htmlFragment;
+             const element = document.getElementById(elementByid);
+             element.innerHTML = htmlFragment;
          }).catch(error => {
              console.error('Beim Abrufen des HTML-Fragments ist ein Fehler aufgetreten:', error);
          });
