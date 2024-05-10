@@ -6,6 +6,15 @@ html, body, #container {
 body {
   padding-top: 50px;
 }
+h2 {
+  font-size: 14px;
+  font-weight: bold;
+}
+ul.poi, ul li {
+      list-style-type: none; /* Entfernt die Listenpunkte */
+      margin: 0; /* Entfernt das Margin der Listenpunkte */
+      padding: 0; /* Entfernt das Padding der Listenpunkte */
+    }
 input[type="radio"], input[type="checkbox"] {
   margin: 0;
 }
@@ -182,7 +191,7 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .leaflet-tooltip {
-  background-color: transparent;
+//  background-color: transparent;
   border: 5px;
   box-shadow: 5px;
   font-size: 16px;
