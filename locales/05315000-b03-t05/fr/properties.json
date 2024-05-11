@@ -1,0 +1,15 @@
+{
+  "title":"Sentier culturel de Cologne",
+  "brand": "Sentiers culturels Lindenthal Route 5",
+  "welcomeModelTitle":"Bienvenue sur les sentiers culturels",
+  "closeBtn": "fermer",
+  "zoom": "Zoom",
+  "download": "Télécharger",
+  "language": "Langue",
+  "pois": "Points D'intérêt",
+  "route": "Route",
+  "en": "english",
+  "de": "deutsch",
+  "fr": "français",
+  "languages": ["de", "en", "fr"]
+}

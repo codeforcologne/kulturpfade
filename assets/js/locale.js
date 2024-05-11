@@ -1,13 +1,15 @@
 let languageCode = 'de';
+// Sprache des Browsers ermitteln
 
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof i18next !== 'undefined' && typeof i18nextHttpBackend !== 'undefined') {
     i18next
       .use(i18nextHttpBackend)
+      .use(window.i18nextBrowserLanguageDetector)
       .init({
-        lng: languageCode,
+        lng: browserLanguage,
         fallbackLng: 'de',
-        debug: false,
+        debug: true,
         i18nextHttpBackend: {
            loadPath: './locales/{{ns}}/{{lng}}/properties.json', //path has to be defined in 'assets/i18next/i18nextHttpBackend.js'; checkout readme.txt
         },
@@ -29,12 +31,22 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+let browserLanguage = navigator.language.split('-')[0] || navigator.userLanguage.split('-')[0];
+browserLanguage = getURLParameter('lng');
+console.log("Browsersprache:", browserLanguage);
+
 function updateContent() {
 
-    var languages = i18next.t('languages', { returnObjects: true });
-    var languageSelector = new LanguageSelector();
+    let languages = i18next.t('languages', { returnObjects: true });
+    let languageSelector = new LanguageSelector();
     for (let i = 0; i < languages.length; i++) {
         languageSelector.build(languages[i], i18next.language);
+    }
+
+    if (languages.includes(browserLanguage)) {
+        // do nothing
+    } else {
+        languageCode = languages[0];
     }
 
     loadPoiLayer();
