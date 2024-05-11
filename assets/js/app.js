@@ -10,10 +10,6 @@ if (getURLParameter("id")) {
   namespace = config.start.id;
 }
 
-// Sprache des Browsers ermitteln
-var browserLanguage = navigator.language || navigator.userLanguage;
-console.log("Browsersprache:", browserLanguage);
-
 $(window).resize(function() {
   sizeLayerControl();
 });
@@ -493,17 +489,6 @@ if (!L.Browser.touch) {
   .disableScrollPropagation(container);
 } else {
   L.DomEvent.disableClickPropagation(container);
-}
-
-/**************************************************************************************************/
-// URL PARAMETER START
-/**************************************************************************************************/
-
-function getURLParameter(name) {
-  return decodeURIComponent(
-    (new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)
-      || [null, ''])[1].replace(/\+/g, '%20')
-  ) || null;
 }
 
 /**************************************************************************************************/
