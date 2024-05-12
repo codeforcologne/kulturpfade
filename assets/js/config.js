@@ -1,3 +1,16 @@
+let namespace;
+let languageCode;
+
+/**************************************************************************************************/
+// GET LANGUAGE
+/**************************************************************************************************/
+
+let browserLanguage = navigator.language.split('-')[0] || navigator.userLanguage.split('-')[0];
+if (getURLParameter('lng')) {
+    browserLanguage = getURLParameter('lng');
+}
+console.log("Browsersprache: ", browserLanguage);
+
 /**************************************************************************************************/
 // URL PARAMETER START
 /**************************************************************************************************/

@@ -1,4 +1,3 @@
-let languageCode = 'de';
 // Sprache des Browsers ermitteln
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -15,9 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         ns: namespace
       }, function(err, t) {
-        // call update content
         languageCode = i18next.language.split('-')[0];
-        // languageCode = i18next.language;
+        // call update content
         updateContent();
       })
       .then(() => {
@@ -31,22 +29,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-let browserLanguage = navigator.language.split('-')[0] || navigator.userLanguage.split('-')[0];
-browserLanguage = getURLParameter('lng');
-console.log("Browsersprache:", browserLanguage);
-
 function updateContent() {
 
     let languages = i18next.t('languages', { returnObjects: true });
     let languageSelector = new LanguageSelector();
     for (let i = 0; i < languages.length; i++) {
         languageSelector.build(languages[i], i18next.language);
-    }
-
-    if (languages.includes(browserLanguage)) {
-        // do nothing
-    } else {
-        languageCode = languages[0];
     }
 
     loadPoiLayer();
@@ -65,14 +53,14 @@ function updateContent() {
     document.getElementById('poisPanelTitle').innerHTML = i18next.t('pois');
     document.getElementById('welcomeModelTitle').innerHTML = i18next.t('welcomeModelTitle');
 
-    new ModalBuilder().build('aboutTabsHeader');
-    new ModalBuilder().build('attributionModal');
-    new ModalBuilder().build('disclaimerModal');
-    new ModalBuilder().build('featuresModal');
-    new ModalBuilder().build('routModalBody');
-    new ModalBuilder().build('links');
-    new ModalBuilder().build('expectModal');
-    new ModalBuilder().build('aboutModal');
+    new ModalBuilder().build('aboutTabsHeader', i18next.language);
+    new ModalBuilder().build('attributionModal', i18next.language);
+    new ModalBuilder().build('disclaimerModal', i18next.language);
+    new ModalBuilder().build('featuresModal', i18next.language);
+    new ModalBuilder().build('routModalBody', i18next.language);
+    new ModalBuilder().build('links', i18next.language);
+    new ModalBuilder().build('expectModal', i18next.language);
+    new ModalBuilder().build('aboutModal', i18next.language);
 }
 
 /**
