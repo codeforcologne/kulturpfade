@@ -1,8 +1,6 @@
 var map, featureList;
 var urlroute, urlpoi;
 
-var namespace;
-
 // get namespace from urlParameter
 if (getURLParameter("id")) {
   namespace = getURLParameter("id");
@@ -249,6 +247,8 @@ var pois = L.geoJson(null, {
   },
   onEachFeature: function (feature, layer) {
     if (feature.properties) {
+
+console.log('### POI LAYER ### ' + languageCode);
 
       var content = "";
       var url = 'locales/' + namespace + '/' + languageCode + '/p' + feature.properties.nr + '.html';
@@ -593,7 +593,10 @@ new Downloader(new URLParameterPoi()).buildDownload();
 */
 class ModalBuilder {
 
-     build(elementByid, language) {
+     build(elementByid, languageCode) {
+
+         //console.log(elementByid + ":" + languageCode);
+
          const url = 'locales/' + namespace + '/' + languageCode + '/' + elementByid + '.html';
          fetch(url).then(response => {
              if (!response.ok) {
