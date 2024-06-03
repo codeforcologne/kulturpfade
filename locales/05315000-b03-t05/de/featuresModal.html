@@ -1,24 +1,13 @@
 <div class="panel panel-primary">
     <div class="panel-heading">Features</div>
     <ul class="list-group">
-        <li class="list-group-item">Anzeige optimiert für Desktop-Browser, als auch für Tablet und Smartphone
-            durch Verwendung von <a href="https://github.com/bmcbride/bootleaf" target="_blank">Bootleaf</a>,
-            <a href="http://getbootstrap.com/" target="_blank">Bootstrap 3</a> und <a href="http://leafletjs.com/" target="_blank">Leaflet</a>.
-        </li>
-        <li class="list-group-item">Mehrsprachigkeit mit Hilfe von <a href="https://www.i18next.com/" target="_blank">i18next</a>. Möglichkeit zwischen den Sprachen umzuschalten</li>
-        <li class="list-group-item">Darstellung der Route vor dem Hintergrund einer <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap Karte</a></li>
-        <li class="list-group-item">Folgen der Route mit Hilfe von <a href="https://github.com/domoritz/leaflet-locatecontrol" target="blank">Leaflet locateControl</a></li>
-        <li class="list-group-item">Darstellung der Sehenswürdigkeiten entlang der Route</li>
-        <li class="list-group-item">Auflistung der Sehenswürdigkeiten in der Sidebar für die die Darstellung auf dem Desktop</li>
-        <li class="list-group-item">Modaler Dialog zur Darstellung jeder Sehenswürdigkeit mit Text und Bild</li>
-        <li class="list-group-item">Modaler Dialog zur Darstellung der Entfernungen zwischen den Sehenswürdigkeiten
-            und geschätzten Dauer, wenn die Strecke ohne Pause zu Fuss zurück gelegt wird.</li>
-        <li class="list-group-item">Marker clustering bei höheren Zoomleveln zur Erhöhung der
-            Anzeigegeschwindigkeit mit <a
-                    href="https://github.com/Leaflet/Leaflet.markercluster"
-                    target="_blank">Leaflet marker cluster plugin</a>
-        </li>
-        <li class="list-group-item">Download aufbereiteter
-            Informationen im cvs- und gpx-Format.</li>
+        <li class="list-group-item">Jeder Kulturpfad ist durch eine eigene Seite repräsentiert. Der Überblick zeigt den Weg und die Anzahl der Sehenswürdigkeiten entlang des Weges. Der Verlauf der Route entspricht bestmöglich der ursprünglichen Streckenführung des Kulturpfades.</li>
+        <li class="list-group-item">Mit einem Dialog können die Informationen zu den Sehenswürdigkeiten abgerufen werden. Die Texte sind den Heften entnommen, die für die Kulturpfade veröffentlicht wurden. Ein Foto illustriert den Eintrag.</li>
+        <li class="list-group-item">Die Kartenansicht erlaubt es Details entlang des Pfades anzuzeigen. Bisher werden die Sehenswürdigkeiten durch rote Marker mit ihren Nummern angezeigt. Es ist geplant darüber hinaus auch weitere Informationen, wie Häuser unter Denkmalschutz oder Haltestellen für den ÖPNV einblenden zu können.</li>
+        <li class="list-group-item">Die Route verläuft so gut es geht entlang der früheren Streckenführung. Die konkrete Route wird mit einem für dieses Projekt entwickelten Routingsystem berechnet. Dadurch ist es möglich nicht nur die Länge der Strecke, sondern auch die benötigte Zeit anzuzeigen, sollte der Kulturpfad zu Fuss bewältigt werden. Dabei werden Pausen allerdings nicht berücksichtigt.</li>
+        <li class="list-group-item">Die Informationen im Dialog zu den jeweiligen Sehenswürdigkeiten enthält den Hinweis auf die Quelle. Außerdem habe ich weitere Informationen recherchiert, auf die per Link zugegriffen werden können.</li>
+        <li class="list-group-item">Jedem Kulturpfad war ein Text vorangestellt, der die Besonderheiten der jeweiligen Route betonte. Diese Texte finden sich im Menüpunkt ‚About‘. Selbstverständlich wird auch hier die Quelle des Textes angegeben. Die Länge unterscheidet sich bei den verschiedenen Kulturpfaden.</li>
+        <li class="list-group-item">Die Implementierung der Oberfläche erlaubt die Texte in mehreren Sprachen anzuzeigen. Bisher habe ich das für deutsch und englisch und im Fall des Kulturpfads 5 in Lindenthal auch in französisch konfiguriert. Eigennamen werden selbstverständlich nicht übersetzt. Mit Hilfe konfigurativer Einträge sind prinzipiell auch mehr Sprachen aufschaltbar. Die Implementierung verhindert, dass die Seite dadurch zäh und langsam wird. Leider fällt dafür einiger redaktioneller Aufwand an.</li>
+        <li class="list-group-item">Ich habe mich dazu entschieden, nur einen Kulturpfad pro Seite anzuzeigen. Dies sorgt einerseits für Übersichtlichkeit und vereinfacht andererseits die Entwicklung. Eine noch zu entwickelnde Startseite sollte später eine Übersicht über alle verfügbaren Kulturpfade ermöglichen. Trotzdem habe ich vorgesehen im Menüpunkt ‚About/ weitere Kulturpfade‘ zwischen den Kulturpfaden eines Stadtbezirks umzuschalten. </li>
     </ul>
 </div>
