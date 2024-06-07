@@ -387,7 +387,7 @@ function loadAttributionControl() {
     attributionControl.onAdd = function (map) {
       var div = L.DomUtil.create("div", "leaflet-control-attribution");
 
-      var url = 'locales/' + namespace + '/' + languageCode + '/attributionControl.html';
+      var url = 'locales/' + namespace + '/' + browserLanguage + '/leaflet-control-attribution.html';
       fetch(url).then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -606,7 +606,10 @@ class ModalBuilder {
          }).then(htmlFragment => {
              // Das HTML-Fragment in den DOM einfügen
              const element = document.getElementById(elementByid);
-             element.innerHTML = htmlFragment;
+             // in case of 'leaflet-*' element can be null
+             if (element) {
+                 element.innerHTML = htmlFragment;
+             }
          }).catch(error => {
              console.error('Beim Abrufen des HTML-Fragments ist ein Fehler aufgetreten:', error);
          });
