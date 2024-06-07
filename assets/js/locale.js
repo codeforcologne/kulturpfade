@@ -61,7 +61,9 @@ function updateContent() {
     new ModalBuilder().build('links', i18next.language);
     new ModalBuilder().build('expectModal', i18next.language);
     new ModalBuilder().build('aboutModal', i18next.language);
+    new ModalBuilder().build('leaflet-control-attribution', i18next.language);
 }
+
 
 /**
 Use this class to buildLanguageSelector

@@ -10,6 +10,10 @@ h2 {
   font-size: 14px;
   font-weight: bold;
 }
+div.leaflet-control-attribution {
+  font-size: 10px;
+  font-weight: bold;
+}
 ul.poi, ul li {
       list-style-type: none; /* Entfernt die Listenpunkte */
       margin: 0; /* Entfernt das Margin der Listenpunkte */
