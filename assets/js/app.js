@@ -1,5 +1,5 @@
-var map, featureList;
-var urlroute, urlpoi;
+var map;
+let urlroute, urlpoi, featureList;
 
 // get namespace from urlParameter
 if (getURLParameter("id")) {
