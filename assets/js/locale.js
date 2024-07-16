@@ -48,10 +48,13 @@ function updateContent() {
     document.getElementById('languageSelectorA').innerHTML = i18next.t('language');
     document.getElementById('zoomSelectorSpan').innerHTML = i18next.t('zoom');
     document.getElementById('routeSelectorSpan').innerHTML = i18next.t('route');
+    document.getElementById('aboutSelectorSpan').innerHTML = i18next.t('about');
     document.getElementById('poisSelectorSpan').innerHTML = i18next.t('pois');
     document.getElementById('downloadSelectorSpan').innerHTML = i18next.t('download');
     document.getElementById('poisPanelTitle').innerHTML = i18next.t('pois');
     document.getElementById('welcomeModelTitle').innerHTML = i18next.t('welcomeModelTitle');
+
+
 
     new ModalBuilder().build('aboutTabsHeader', i18next.language);
     new ModalBuilder().build('attributionModal', i18next.language);

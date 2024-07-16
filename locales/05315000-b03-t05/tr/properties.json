@@ -8,7 +8,6 @@
   "language": "Sprache",
   "pois": "Sehenswürdigkeiten",
   "route": "Route",
-  "about": "About",
   "en": "english",
   "de": "deutsch",
   "fr": "français",
@@ -16,5 +15,5 @@
   "nl": "nederlands",
   "ja": "日本語",
   "ru": "Русский",
-  "languages": ["de", "en", "fr"]
+  "languages": ["de", "en", "fr", "tr", "nl", "ja", "ru"]
 }
