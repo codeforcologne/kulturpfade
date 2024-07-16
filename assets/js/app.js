@@ -495,40 +495,6 @@ if (!L.Browser.touch) {
 // DOWNLOAD MENU
 /**************************************************************************************************/
 
-/**
-Checks for existence of an URL.
-After then it appends a new Download Childe
-*/
-class Downloader {
-
-    constructor(urlparameter) {
-        this.url = urlparameter.getUrl();
-        this.path = urlparameter.getPath();
-        this.id = urlparameter.getId();
-        this.type = urlparameter.getType();
-    }
-
-    buildDownload() {
-        fetch(this.url, {
-          method: 'HEAD' // Verwende die HEAD-Methode, um nur den Header abzurufen
-        }).then(response => {
-          if (response.ok) {
-            console.log('Elements for download initialized.');
-            var newLi, targetElement;
-            newLi = document.createElement('li');
-            newLi.innerHTML = '<a href="service/' + this.path + '/' + this.id + '.' + this.type + '" download="' + this.id + '.' + this.type + '" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;' + this.path + ' als ' + this.type + '</a>';
-            targetElement = document.getElementById('downloadDropUl');
-            targetElement.appendChild(newLi);
-          } else {
-            console.log('No data for download found.');
-          }
-        }).catch(error => {
-          console.error('Ein Fehler ist aufgetreten:', error);
-        });
-    }
-
-}
-
 /*
 This class constructs an url out of urlparameter and returns url, id, path, type
 */
@@ -582,9 +548,6 @@ class URLParameterPoi extends URLParameter {
     path = "poi";
     type = "geojson";
 }
-
-new Downloader(new URLParameterGPX()).buildDownload();
-new Downloader(new URLParameterPoi()).buildDownload();
 
 
 /**
