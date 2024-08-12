@@ -9,6 +9,7 @@
   <meta name="theme-color" content="#000000">
   <meta name="description" content="">
   <meta name="author" content="">
+  <base target="_blank">
   <title>Kulturpfade Köln</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -94,23 +95,33 @@
       </div>
       <div class="modal-body">
         <ul class="nav nav-tabs nav-justified" id="aboutTabsHeader">
-          <!-- will be set by class AboutModal -->
+          <!-- will be set after loading -->
         </ul>
         <div class="tab-content" id="aboutTabsContent">
           <div class="tab-pane fade active in" id="expectModal">
-            <!-- will be set by class ExpectModal -->
+            <div class="panel panel-primary" id="expectModalLi">
+              <!-- will be set after loading -->
+            </div>
           </div>
           <div class="tab-pane fade" id="aboutModal">
-            <!-- will be set by class AboutModal -->
-          </div>
+            <div class="panel panel-primary" id="aboutModalLi">
+              <!-- will be set after loading -->
+            </div>
+         </div>
           <div class="tab-pane fade" id="featuresModal">
-            <!-- will be set by class FeaturesModal -->
+            <div class="panel panel-primary" id="featuresModalLi">
+              <!-- will be set after loading -->
+            </div>
           </div>
-          <div class="tab-pane fade" id="links">
-            <!-- will be set by class LinksModal -->
+          <div class="tab-pane fade" id="linksModal">
+            <div class="panel panel-primary" id="linksModalLi">
+              <!-- will be set after loading -->
+            </div>
           </div>
           <div class="tab-pane fade text-danger" id="disclaimerModal">
-            <!-- will be set by class DisclaimerModal -->
+            <div class="panel panel-primary" id="disclaimerModalLi">
+              <!-- will be set after loading -->
+            </div>
           </div>
         </div>
       </div>
@@ -154,7 +165,15 @@
 </div><!-- /.modal -->
 
 <div class="modal fade" id="attributionModal" tabindex="-1" role="dialog">
-  <!-- will be set by class AttributionModal -->
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="panel panel-primary" id="attributionModalLi">
+        <!-- will be set after loading -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><span id="closeBtnAboutModal">Schliessen</span></button>
+      </div>
+    </div>
 </div><!-- /.modal -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -165,7 +184,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.81.0/L.Control.Locate.min.js"></script>
 <script src="https://cdn.datatables.net/2.0.3/js/dataTables.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/23.11.1/i18next.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-browser-languagedetector/7.2.1/i18nextBrowserLanguageDetector.min.js"></script>
 

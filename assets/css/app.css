@@ -6,10 +6,6 @@ html, body, #container {
 body {
   padding-top: 50px;
 }
-h2 {
-  font-size: 14px;
-  font-weight: bold;
-}
 div.leaflet-control-attribution {
   font-size: 10px;
   font-weight: bold;
@@ -18,7 +14,7 @@ ul.poi, ul li {
       list-style-type: none; /* Entfernt die Listenpunkte */
       margin: 0; /* Entfernt das Margin der Listenpunkte */
       padding: 0; /* Entfernt das Padding der Listenpunkte */
-    }
+}
 input[type="radio"], input[type="checkbox"] {
   margin: 0;
 }
@@ -47,6 +43,44 @@ input[type="radio"], input[type="checkbox"] {
 #aboutTabsContent {
   padding-top: 10px;
 }
+.panel-primary {
+    margin: 10px;
+    padding: 10px;
+}
+.panel-primary h1 {
+    font-size: 18px;
+}
+.panel-primary h2 {
+    font-size: 14px;
+}
+.panel-primary p {
+    font-size: 14px;
+}
+.panel-primary img {
+    width: 100%;
+}
+.panel-primary ul li {
+      list-style-type: none;
+      margin-bottom: 5px;
+      margin-left: -40px;
+}
+.modal-body ul li {
+      list-style-type: none;
+      margin-left: -40px;
+}
+.modal-body h1 {
+    font-size: 18px;
+}
+.modal-body h2 {
+    font-size: 14px;
+}
+.modal-body p {
+    font-size: 14px;
+}
+.modal-body img {
+    width: 100%;
+}
+
 .progress-bar-full {
   width: 100%;
 }
@@ -217,7 +251,8 @@ input[type="radio"], input[type="checkbox"] {
   margin: 10px 10px 10px 20px;
 }
 
-#feature-info img.pano {
+
+#feature-info img[src*="#pano"] {
   width:100%;
   height: auto;
   margin: 10px 0px 10px 20px;
