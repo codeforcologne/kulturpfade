@@ -248,22 +248,19 @@ var pois = L.geoJson(null, {
   onEachFeature: function (feature, layer) {
     if (feature.properties) {
 
-console.log('### POI LAYER ### ' + languageCode);
-
       var content = "";
-      var url = 'locales/' + namespace + '/' + languageCode + '/p' + feature.properties.nr + '.html';
+      var url = 'locales/' + namespace + '/' + languageCode + '/p' + feature.properties.nr + '.md';
 
-      fetch(url).then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.text(); // Die Antwort als Text abrufen
-      }).then(htmlFragment => {
-        // Das HTML-Fragment in den DOM einfügen
-        content = htmlFragment;
-      }).catch(error => {
-        console.error('Beim Abrufen des HTML-Fragments ist ein Fehler aufgetreten:', error);
-      });
+     fetch(url).then(response => {
+         if (!response.ok) {
+             throw new Error('Network response was not ok');
+         }
+         return response.text(); // Die Antwort als Text abrufen
+     }).then(mdFragment => {
+        content = marked.parse(mdFragment);
+     }).catch(error => {
+         console.error('Beim Abrufen des MD-Fragments ist ein Fehler aufgetreten:', error);
+     });
 
       layer.on({
         click: function (e) {
@@ -577,5 +574,25 @@ class ModalBuilder {
              console.error('Beim Abrufen des HTML-Fragments ist ein Fehler aufgetreten:', error);
          });
      }
+
+     loadMarkdown(elementByid, languageCode) {
+
+            // Markdown-Datei abrufen
+            const url = 'locales/' + namespace + '/' + languageCode + '/' + elementByid + '.md';
+             fetch(url).then(response => {
+                 if (!response.ok) {
+                   throw new Error('Network response was not ok');
+                 }
+                 return response.text(); // Die Antwort als Text abrufen
+             }).then(mdFragment => {
+            const htmlFragment = marked.parse(mdFragment);
+            const element = document.getElementById(elementByid);
+            if (element) {
+                element.innerHTML = htmlFragment;
+            }
+         }).catch(error => {
+             console.error('Beim Abrufen des HTML-Fragments ist ein Fehler aufgetreten:', error);
+         });
+    }
 
 }

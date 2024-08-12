@@ -12,5 +12,5 @@
   "en": "english",
   "de": "deutsch",
   "fr": "français",
-  "languages": ["de", "en", "fr"]
+  "languages": ["de", "en"]
 }

@@ -54,13 +54,13 @@ function updateContent() {
     document.getElementById('welcomeModelTitle').innerHTML = i18next.t('welcomeModelTitle');
 
     new ModalBuilder().build('aboutTabsHeader', i18next.language);
-    new ModalBuilder().build('attributionModal', i18next.language);
-    new ModalBuilder().build('disclaimerModal', i18next.language);
-    new ModalBuilder().build('featuresModal', i18next.language);
+    new ModalBuilder().loadMarkdown('attributionModalLi', i18next.language);
+    new ModalBuilder().loadMarkdown('disclaimerModalLi', i18next.language);
+    new ModalBuilder().loadMarkdown('featuresModalLi', i18next.language);
     new ModalBuilder().build('routModalBody', i18next.language);
-    new ModalBuilder().build('links', i18next.language);
-    new ModalBuilder().build('expectModal', i18next.language);
-    new ModalBuilder().build('aboutModal', i18next.language);
+    new ModalBuilder().loadMarkdown('linksModalLi', i18next.language);
+    new ModalBuilder().loadMarkdown('expectModalLi', i18next.language);
+    new ModalBuilder().loadMarkdown('aboutModalLi', i18next.language);
     new ModalBuilder().build('leaflet-control-attribution', i18next.language);
 }
 
