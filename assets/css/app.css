@@ -10,11 +10,7 @@ div.leaflet-control-attribution {
   font-size: 10px;
   font-weight: bold;
 }
-ul.poi, ul li {
-      list-style-type: none; /* Entfernt die Listenpunkte */
-      margin: 0; /* Entfernt das Margin der Listenpunkte */
-      padding: 0; /* Entfernt das Padding der Listenpunkte */
-}
+
 input[type="radio"], input[type="checkbox"] {
   margin: 0;
 }
@@ -62,11 +58,11 @@ input[type="radio"], input[type="checkbox"] {
 .panel-primary ul li {
       list-style-type: none;
       margin-bottom: 5px;
-      margin-left: -40px;
+      margin-left: -20px;
 }
 .modal-body ul li {
-      list-style-type: none;
-      margin-left: -40px;
+      list-style-type: circle;
+      margin-left: -20px;
 }
 .modal-body h1 {
     font-size: 18px;

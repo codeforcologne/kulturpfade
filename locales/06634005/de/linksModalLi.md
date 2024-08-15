@@ -1,8 +1,8 @@
 Links
 =====
 
-Dieser Kulturpfad
------------------
+QR Code dieses Fotopfads
+------------------------
 
-![QR-Code](images/05315000-b03-t01.png)
+![QR-Code](images/06634005/qr-06634005.png)
 

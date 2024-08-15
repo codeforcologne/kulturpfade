@@ -16,9 +16,6 @@ Entwicklung
 -----------
 
 * [Wolfram Eberius]
-* Gloria Volkmann
-* Christoph Finke
-* Tim Becker
 
 [Bootleaf]: https://github.com/bmcbride/bootleaf
 [Bootstrap 3]: http://getbootstrap.com/
@@ -28,5 +25,4 @@ Entwicklung
 [Leaflet locateControl]: https://github.com/domoritz/leaflet-locatecontrol
 [Leaflet marker cluster plugin]: https://github.com/Leaflet/Leaflet.markercluster
 [OpenStreetMap (OSM)]: https://openstreetmap.org/
-[Stadt Köln]: https://www.stadt-koeln.de/
 [Wolfram Eberius]: https://weberius.github.io/
