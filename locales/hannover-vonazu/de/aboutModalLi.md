@@ -14,7 +14,7 @@ Sie von Station zu Station.
 Um das an Station 1 gesehene Bild mit dem Ort an Station 2 zusammenzubringen, müssen Sie sich phy-
 sisch vorwärts bewegen, aber zugleich in Gedanken rückwärts. Vorwärts nach Zurück also.
 
-# Wie finde ich die Stationen?
+## Wie finde ich die Stationen?
 Der Rundgang startet am Schauspielhaus in der Prinzenstraße 3. Am dort gezeigten Bild finden Sie einen Aufkleber mit 
 der Adresse der nächsten Station und zusätzlich einem QR-Code. Wenn Sie diesen scannen, zeigt Ihr Handy alle 
 Informationen zur nächsten Station an.
