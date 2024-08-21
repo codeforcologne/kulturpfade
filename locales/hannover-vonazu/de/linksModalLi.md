@@ -4,5 +4,5 @@ Links
 QR Code dieses Fotopfads
 ------------------------
 
-![QR-Code](images/06634005/qr-06634005.png)
+![QR-Code](images/hannover-vonazu/qr-hannover-vonazu.png)
 
