@@ -1,7 +1,11 @@
-# Fotopfade
+# Kulturpfade Köln
 
-Nach Fritzlar muss man vom Süden her kommen, von Mar-burg, von Homberg oder auch von Bad Wildungen. Erst dann wird die exponierte Lage der weithin sichtbaren Stadt am linken Steilufer der Eder deutlich, das nach Norden, in Richtung Kassel, in ein Plateau übergeht. Wir befinden uns hier geographisch im Bereich der Fritzlar-Waberner Ebene, die wiederum Teil der Durchgangslandschaft der Hessischen Senke ist.
+Die Kulturpfade Köln wurden Ende der 1970er Jahre von der damaligen Stadtkonservatorin Hiltrud Kier entwickelt. Sie sollten das Bewusstsein für den Denkmalschutz im Köln der Nachkriegszeit wecken. Im Stadtbild waren sie durch Hinweistafeln repräsentiert, die zumeist an Gebäuden installiert wurden. Sie erzählten die bau- und siedlungsgeschichtlichen Aspekte des jeweiligen Bauwerks mit einem Überblick benachbarter Punkte des gleichen Kulturpfads. 
 
-Von dieser Ebene aus bietet sich das großartige Bild der knapp 1290-jährigen Stadt. Zahlreiche gut erhaltene Wehr- und Wachtürme der mittelalterlichen Stadtbefestigung und die schlanken, schiefergedeckten Kirchtürme bewachen die vielen eng aneinander geschmiegten spitzgiebeligen Fachwerkhäu-ser. Über allem, noch einmal weit herausgehoben und domi-nierend, die Türme des Domes St. Peter.
+Die Hinweistafeln wurden zuletzt Anfang der 2010er Jahre auf Betreiben von Stadtteilvereinen teilweise erneuert. Obwohl es einige Publikationen zu den Kulturpfaden gab, ist das Wissen darum nur noch bruchstückhaft vorhanden.
 
-Fritzlar erlebt man am besten zu Fuß, weil es, wie alle mittelalterlichen Stadtkerne, auch nur Fußgängerdimensionen hat, abgesehen davon, dass einige Gassen und Treppenstra-Ben sowie der Marktplatz ohnehin für Autos nicht passierbar sind. Man kann die alte Dom- und Kaiserstadt nur unter historischem Aspekt richtig kennenlernen, denn hier befinden wir uns wahrhaft auf geschichtlichem Boden. Ein kleiner Ausflug in die Vergangenheit ist unumgänglich.
+Im Rahmen eines Open Data Projektes des OK Lab Köln und der Stadt Köln, werden zunächst noch existierende Quellen recherchiert und eine Applikation entwickelt, die das Wissen wieder zugänglich machen soll und die Möglichkeit bietet, weitere Kulturpfade zu erschliessen.
+
+Die App, die zur Planung der Kulturpfade eingesetzt werden soll, wird zur Zeit unter [weberius/kulturpfadservice](https://github.com/weberius/kulturpfadservice) entwickelt. Es handelt sich dabei um einen mit java realisierten Service, der auf Basis von Openstreetmap das Routing zwischen Points Of Interest ermöglicht. Dabei ist möglich, nicht den direkten, sondern einen alternativen Weg zu ermitteln. Die Kulturpfade Anwendung wird als halbdynamische WebSeite mit JavaScript Code in diesem Bereich veröffentlicht.
+
+Weitere Informationen finden sich im [Wiki](https://github.com/codeforcologne/kulturpfade/wiki)
