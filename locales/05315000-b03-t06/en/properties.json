@@ -1,0 +1,15 @@
+{
+  "title":"Cultural Paths Cologne",
+  "brand": "Cultural Paths Lindenthal Tour 6",
+  "welcomeModelTitle":"Welcome to Cultural Paths",
+  "closeBtn": "close",
+  "zoom": "Zoom",
+  "download": "Download",
+  "language": "Language",
+  "pois": "Points Of Interest",
+  "route": "Route",
+  "en": "english",
+  "de": "deutsch",
+  "fr": "français",
+  "languages": ["de", "en"]
+}

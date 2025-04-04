@@ -1,0 +1,20 @@
+{
+  "title":"Kulturpfad Köln",
+  "brand": "Kulturpfade Lindenthal Tour 5",
+  "welcomeModelTitle":"文化トレイルへようこそ",
+  "closeBtn": "閉じる",
+  "zoom": "ズーム",
+  "download": "ダウンロード",
+  "language": "言語",
+  "pois": "観光スポット",
+  "route": "道路",
+  "about": "アバウト",
+  "en": "english",
+  "de": "deutsch",
+  "fr": "français",
+  "tr": "türkçe",
+  "nl": "nederlands",
+  "ja": "日本語",
+  "ru": "Русский",
+  "languages": ["de", "en", "fr", "ja"]
+}
