@@ -1,0 +1,17 @@
+{
+  "title":"Geschichtsstationen Moers",
+  "brand": "Geschichtsstationen Moers",
+  "welcomeModelTitle":"Willkommen zu den Geschichtsstationen",
+  "closeBtn": "Schliessen",
+  "zoom": "Zoom",
+  "download": "Download",
+  "language": "Sprache",
+  "pois": "Sehenswürdigkeiten",
+  "route": "Route",
+  "en": "english",
+  "de": "deutsch",
+  "fr": "français",
+  "tr": "Türkçe",
+  "ja": "日本語",
+  "languages": ["de"]
+}
