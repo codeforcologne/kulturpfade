@@ -1,0 +1,17 @@
+{
+  "title":"Kölnführung",
+  "brand": "Köln Innenstadt",
+  "welcomeModelTitle":"Willkommen",
+  "closeBtn": "Schliessen",
+  "zoom": "Zoom",
+  "download": "Download",
+  "language": "Sprache",
+  "pois": "Sehenswürdigkeiten",
+  "route": "Route",
+  "en": "english",
+  "de": "deutsch",
+  "fr": "français",
+  "tr": "Türkçe",
+  "ja": "日本語",
+  "languages": ["de"]
+}
