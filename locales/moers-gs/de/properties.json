@@ -13,5 +13,5 @@
   "fr": "français",
   "tr": "Türkçe",
   "ja": "日本語",
-  "languages": ["de"]
+  "languages": ["de", "en", "fr"]
 }
