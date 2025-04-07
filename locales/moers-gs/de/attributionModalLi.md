@@ -1,8 +1,6 @@
-Attribution
-===========
+# Attribution
 
-Tools und Frameworks
---------------------
+## Tools und Frameworks
 
 * Anzeige optimiert für Desktop-Browser, Tablet und Smartphone durch Verwendung von [Bootleaf]. Bootleaf basiert auf [Bootstrap 3] und [Leaflet].
 * Mehrsprachigkeit mit Hilfe von [i18next]. Möglichkeit zwischen den Sprachen umzuschalten.
@@ -12,8 +10,7 @@ Tools und Frameworks
 * zur Anzeige der x/y Daten wird [Leaflet Coordinates Control] eingesetzt.
 * Daten von [OpenStreetMap (OSM)]. Kartendarstellung durch OSM. OSM ist ein kollaboratives, Open-Source-Projekt zur Erstellung einer detaillierten und frei verfügbaren Weltkarte. Durch die aktive Beteiligung der globalen Mapper-Gemeinschaft bietet OSM flexible und umfangreiche geographische Daten, die in einer Vielzahl von Anwendungen genutzt werden können.</li>
 
-Entwicklung
------------
+## Entwicklung
 
 * [Wolfram Eberius]
 

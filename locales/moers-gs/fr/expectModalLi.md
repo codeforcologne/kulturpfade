@@ -1,11 +1,2 @@
-Was mich erwartet
-=================
-
-
-weitere Informationen
----------------------
-
-
-Quelle
-------
+# À quoi s'attendre
 
