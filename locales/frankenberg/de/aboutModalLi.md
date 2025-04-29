@@ -6,7 +6,7 @@ Diese spezielle Route umfasst nicht alle möglichen Stationen. Vielmehr konzentr
 
 Die gewählte Abfolge der Stationen folgt keiner chronologischen Reihenfolge, sondern wurde so gestaltet, dass sie leicht begehbar ist und möglichst wenig Berührung mit dem Straßenverkehr hat.
 
-Ziel ist es, Besucherinnen und Besucher dazu anzuregen, mit Smartphone oder Kamera die kulturellen und historischen Spuren der Stadt selbstständig oder in Gruppen zu entdecken – im Austausch über das Erlebte und die Qualitäten von Moers. Die Tafeln im Stadtraum dienen dabei als Orientierungspunkte der Tour.
+Ziel ist es, Besucherinnen und Besucher dazu anzuregen, mit Smartphone oder Kamera die kulturellen und historischen Spuren der Stadt selbstständig oder in Gruppen zu entdecken – im Austausch über das Erlebte und die Qualitäten von Frankenberg. Die Tafeln im Stadtraum dienen dabei als Orientierungspunkte der Tour.
 
 Die Texte wurden anhand von öffentlich zugänglichen Informationen unter Zuhilfenahme von KI erstellt. Die Fotos wurden durch Wolfram Eberius erstellt. 
 
