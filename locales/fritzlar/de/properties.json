@@ -1,0 +1,18 @@
+{
+  "namespace": "06634005",
+  "title":"Fotopfad Fritzlar",
+  "brand": "Fotopfad Fritzlar",
+  "welcomeModelTitle":"Willkommen zu den Fotopfaden",
+  "closeBtn": "Schliessen",
+  "zoom": "Zoom",
+  "download": "Download",
+  "language": "Sprache",
+  "pois": "Sehenswürdigkeiten",
+  "route": "Route",
+  "en": "english",
+  "de": "deutsch",
+  "fr": "français",
+  "tr": "Türkçe",
+  "ja": "日本語",
+  "languages": ["de"]
+}
