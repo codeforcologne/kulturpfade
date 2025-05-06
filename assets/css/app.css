@@ -258,3 +258,9 @@ input[type="radio"], input[type="checkbox"] {
   text-align: justify;
   hyphens: auto;
 }
+
+.full-width-audio {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
