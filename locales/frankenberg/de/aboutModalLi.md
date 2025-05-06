@@ -6,7 +6,7 @@ Diese spezielle Route umfasst nicht alle möglichen Stationen. Vielmehr konzentr
 
 Die gewählte Abfolge der Stationen folgt keiner chronologischen Reihenfolge, sondern wurde so gestaltet, dass sie leicht begehbar ist und möglichst wenig Berührung mit dem Straßenverkehr hat.
 
-Ziel ist es, Besucherinnen und Besucher dazu anzuregen, mit Smartphone oder Kamera die kulturellen und historischen Spuren der Stadt selbstständig oder in Gruppen zu entdecken – im Austausch über das Erlebte und die Qualitäten von Frankenberg. Die Tafeln im Stadtraum dienen dabei als Orientierungspunkte der Tour.
+Ziel ist es mit Smartphone oder Kamera die kulturellen und historischen Spuren der Stadt selbstständig oder in Gruppen zu entdecken – im Austausch über das Erlebte und die Qualitäten von Frankenberg. Die Tafeln im Stadtraum dienen dabei als Orientierungspunkte der Tour.
 
 Die Texte wurden anhand von öffentlich zugänglichen Informationen unter Zuhilfenahme von KI erstellt. Die Fotos wurden durch Wolfram Eberius erstellt. 
 
@@ -19,15 +19,14 @@ Die Texte wurden anhand von öffentlich zugänglichen Informationen unter Zuhilf
 
 ## Kontakt
 
-* [Entwickler]: Wolfram Eberius (eberius (at) gmail.com)
-* [Fotopfade], Entwicklung auf github
-
+* Entwickler: [Wolfram Eberius] (Webseite)
+* E-Mail: [Wolfram Eberius](mailto:wolfram@eberius.photography?subject=Anfrage%20von%20Fotopfade%20Frankenberg)
 
 [Frankenberg]: https://www.frankenberg.de
 [denkmalpflege-hessen]: https://denkxweb.denkmalpflege-hessen.de
 [wikipedia]: https://de.wikipedia.org
 [Fotopfade]:https://github.com/weberius/fotopfade
-[Entwickler]:https://weberius.github.io
+[Wolfram Eberius]:https://wolfram.eberius.photography
 
 
 

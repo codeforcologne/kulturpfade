@@ -249,7 +249,7 @@ var pois = L.geoJson(null, {
     if (feature.properties) {
 
       var content = "";
-      var url = 'locales/' + namespace + '/' + languageCode + '/p' + feature.properties.nr + '.md';
+      var url = 'locales/' + namespace + '/' + languageCode + '/p' + feature.properties.id + '.md';
 
      fetch(url).then(response => {
          if (!response.ok) {
