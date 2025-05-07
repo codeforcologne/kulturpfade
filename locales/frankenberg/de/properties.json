@@ -13,5 +13,11 @@
   "fr": "français",
   "tr": "Türkçe",
   "ja": "日本語",
-  "languages": ["de"]
+  "languages": ["de"],
+  "Sehenswürdigkeiten": {
+    "Sehenswürdigkeiten": poiLayer
+  },
+  "Kulturpfade": {
+    "Lindenthal": routes
+  }
 }
