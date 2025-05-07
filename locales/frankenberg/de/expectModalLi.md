@@ -4,7 +4,17 @@ Die Tour durch Frankenberg führt auf einer Strecke von etwa 3,5 Kilometern zu d
 
 ## Was kann ich in Frankenberg entdecken?
 
-<audio controls>
-  <source src="locales/frankenberg/de/fotopfade-frankenberg.mp3" type="audio/mpeg">
+<audio controls class="full-width-audio">
+  <source src="locales/frankenberg/de/frankenberg.mp3" type="audio/mpeg">
   Dein Browser unterstützt kein Audioelement.
 </audio>
+
+## Quellen
+
+- Informationstafel Stadt Frankenberg
+- Kulturdenkmäler in Hessen
+- Wikipedia
+
+## Hinweis
+
+_Die Inhalte wurden unter Einsatz von KI-Werkzeugen erstellt und sorgfältig überprüft. Vereinzelt können Unstimmigkeiten nicht ausgeschlossen werden._
