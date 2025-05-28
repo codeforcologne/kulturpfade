@@ -254,16 +254,16 @@ var pois = L.geoJson(null, {
       var content = "";
       var url = 'locales/' + namespace + '/' + languageCode + '/p' + feature.properties.id + '.md';
 
-      fetch(url).then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.text();
-      }).then(mdFragment => {
+     fetch(url).then(response => {
+         if (!response.ok) {
+             throw new Error('Network response was not ok');
+         }
+         return response.text(); // Die Antwort als Text abrufen
+     }).then(mdFragment => {
         content = marked.parse(mdFragment);
-      }).catch(error => {
-        console.error('Beim Abrufen des MD-Fragments ist ein Fehler aufgetreten:', error);
-      });
+     }).catch(error => {
+         console.error('Beim Abrufen des MD-Fragments ist ein Fehler aufgetreten:', error);
+     });
 
       layer.on({
         click: function (e) {
@@ -275,9 +275,9 @@ var pois = L.geoJson(null, {
       });
       $("#feature-list tbody")
         .append('<tr class="feature-row" id="'
-          + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng
-          + '"><td style="vertical-align: middle;">' + layer.feature.properties.nr + '</td><td class="feature-name">'
-          + layer.feature.properties.name + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+        + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng
+        + '"><td style="vertical-align: middle;">' + layer.feature.properties.nr + '</td><td class="feature-name">'
+        + layer.feature.properties.name + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
 
       var tooltipOptions = {
         offset: [10, -50],
@@ -285,17 +285,8 @@ var pois = L.geoJson(null, {
         className: 'leaflet-tooltip'
       };
       layer.bindTooltip('<div class="leaflet-tooltip">'
-        + layer.feature.properties.name
-        + '</div>', tooltipOptions);
-
-      // Tooltip automatisch einblenden, wenn stark reingezoomt wird
-      map.on('zoomend', function() {
-        if (map.getZoom() >= 16) {
-          layer.openTooltip();
-        } else {
-          layer.closeTooltip();
-        }
-      });
+      + layer.feature.properties.name
+      + '</div>', tooltipOptions).openTooltip();
 
     }
   }
@@ -369,13 +360,6 @@ map.on("moveend", function (e) {
 /* Clear feature highlight when map is clicked */
 map.on("click", function(e) {
   highlight.clearLayers();
-});
-
-
-var control = new L.Control.Coordinates();
-control.addTo(map);
-map.on('click', function(e) {
-	control.setCoordinates(e);
 });
 
 /* Attribution control */
