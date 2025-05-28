@@ -264,7 +264,7 @@ var pois = L.geoJson(null, {
       }).catch(error => {
         console.error('Beim Abrufen des MD-Fragments ist ein Fehler aufgetreten:', error);
       });
-/*
+
       layer.on({
         click: function (e) {
           $("#feature-title").html(feature.properties.nr + ' ' + feature.properties.name);
@@ -279,7 +279,6 @@ var pois = L.geoJson(null, {
           );
         }
       });
-*/
 
       $("#feature-list tbody")
         .append('<tr class="feature-row" id="'
@@ -479,10 +478,10 @@ var baseLayers = {
 
 var groupedOverlays = {
   "Sehenswürdigkeiten": {
-    "Sehenswürdigkeiten": poiLayer
+    "POI": poiLayer
   },
   "Kulturpfade": {
-    "Lindenthal": routes
+    "Route": routes
   }
 };
 
