@@ -270,16 +270,9 @@ var pois = L.geoJson(null, {
           $("#feature-title").html(feature.properties.nr + ' ' + feature.properties.name);
           $("#feature-info").html(content);
           $("#featureModal").modal("show");
-          highlight.clearLayers().addLayer(
-            L.circleMarker(
-                [feature.geometry.coordinates[1],
-                feature.geometry.coordinates[0]],
-                highlightStyle
-              )
-          );
+          highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], highlightStyle));
         }
       });
-
       $("#feature-list tbody")
         .append('<tr class="feature-row" id="'
           + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng
@@ -289,7 +282,7 @@ var pois = L.geoJson(null, {
       var tooltipOptions = {
         offset: [10, -50],
         iconAnchor: [20, 10],
-        className: 'leaflet-tooltip-2'
+        className: 'leaflet-tooltip'
       };
       layer.bindTooltip('<div class="leaflet-tooltip">'
         + layer.feature.properties.name
@@ -297,14 +290,15 @@ var pois = L.geoJson(null, {
 
       // Tooltip automatisch einblenden, wenn stark reingezoomt wird
       map.on('zoomend', function() {
-        if (map.getZoom() >= 19) {
+        if (map.getZoom() >= 16) {
           layer.openTooltip();
         } else {
           layer.closeTooltip();
         }
       });
+
     }
-  } // end onEachFeature: function (feature, layer)
+  }
 });
 
 /**************************************************************************************************/
@@ -478,10 +472,10 @@ var baseLayers = {
 
 var groupedOverlays = {
   "Sehenswürdigkeiten": {
-    "POI": poiLayer
+    "Sehenswürdigkeiten": poiLayer
   },
   "Kulturpfade": {
-    "Route": routes
+    "Lindenthal": routes
   }
 };
 
