@@ -288,6 +288,15 @@ var pois = L.geoJson(null, {
       + layer.feature.properties.name
       + '</div>', tooltipOptions).openTooltip();
 
+      // Tooltip automatisch einblenden, wenn stark reingezoomt wird
+      map.on('zoomend', function() {
+        if (map.getZoom() >= 19) {
+          layer.openTooltip();
+        } else {
+          layer.closeTooltip();
+        }
+      });
+
     }
   }
 });
