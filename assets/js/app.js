@@ -267,7 +267,11 @@ var pois = L.geoJson(null, {
 
       layer.on({
         click: function (e) {
-          $("#feature-title").html(feature.properties.nr + ' ' + feature.properties.name);
+          const featureTitle =
+            (feature.properties.point === "p") | (feature.properties.point === "u") ?
+              feature.properties.nr + ' ' + feature.properties.name :
+              feature.properties.name;
+          $("#feature-title").html(featureTitle);
           $("#feature-info").html(content);
           $("#featureModal").modal("show");
           highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], highlightStyle));
@@ -290,7 +294,7 @@ var pois = L.geoJson(null, {
 
       // Tooltip automatisch einblenden, wenn stark reingezoomt wird
       map.on('zoomend', function() {
-        if (map.getZoom() >= 19) {
+        if (map.getZoom() >= 18) {
           layer.openTooltip();
         } else {
           layer.closeTooltip();
