@@ -132,11 +132,16 @@ function syncSidebar() {
   pois.eachLayer(function (layer) {
     if (map.hasLayer(poiLayer)) {
       if (map.getBounds().contains(layer.getLatLng())) {
+        // show number only if part of track
+        const propsnr = (layer.feature.properties.point === "p") ? layer.feature.properties.nr : " "
         $("#feature-list tbody")
           .append('<tr class="feature-row" id="'
             + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng
-            + '"><td style="vertical-align: middle;text-align: right" class="feature-nr">' + layer.feature.properties.nr + '</td><td class="feature-name">'
-            + layer.feature.properties.name + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+            + '"><td style="vertical-align: middle;text-align: right" class="feature-nr">'
+            + propsnr
+            + '</td><td class="feature-name">'
+            + layer.feature.properties.name
+            + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
       }
     }
   });
@@ -277,11 +282,15 @@ var pois = L.geoJson(null, {
           highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], highlightStyle));
         }
       });
+      // show number only if part of track
+      const propsnr = (layer.feature.properties.point === "p") ? layer.feature.properties.nr : " "
       $("#feature-list tbody")
         .append('<tr class="feature-row" id="'
         + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng
-        + '"><td style="vertical-align: middle;">' + layer.feature.properties.nr + '</td><td class="feature-name">'
-        + layer.feature.properties.name + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+        + '"><td style="vertical-align: middle;">'
+        + propsnr + '</td><td class="feature-name">'
+        + layer.feature.properties.name
+        + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
 
       var tooltipOptions = {
         offset: [10, -50],
@@ -468,11 +477,11 @@ var baseLayers = {
 };
 
 var groupedOverlays = {
-  "Sehenswürdigkeiten": {
-    "Sehenswürdigkeiten": poiLayer
+  "POI": {
+    "Points Of Interest": poiLayer
   },
-  "Kulturpfade": {
-    "Lindenthal": routes
+  "Route": {
+    "Route": routes
   }
 };
 
