@@ -241,7 +241,7 @@ var pois = L.geoJson(null, {
   pointToLayer: function (feature, latlng) {
     // If style is 0, show empty string, else show nr
     const iconHtml = (feature.properties.point === "o") ? "" : feature.properties.nr;
-    const iconSize = (feature.properties.point === "o") ? [30, 30] : [40, 30];
+    const iconSize = (feature.properties.point === "o") ? [20, 20] : [40, 30];
     return L.marker(latlng, {
       icon: L.divIcon({
         className: 'red-tooltip',
