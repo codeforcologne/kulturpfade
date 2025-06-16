@@ -292,14 +292,25 @@ var pois = L.geoJson(null, {
         + layer.feature.properties.name
         + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
 
-      var tooltipOptions = {
-        offset: [10, -50],
-        iconAnchor: [20, 10],
-        className: 'leaflet-tooltip'
-      };
-      layer.bindTooltip('<div class="leaflet-tooltip">'
-      + layer.feature.properties.name
-      + '</div>', tooltipOptions).openTooltip();
+      var tooltipOptions;
+      if (feature.properties.point === "p" | feature.properties.point === "u") {
+        tooltipOptions = {
+            offset: [10, 5], // Offset des Tooltips
+            direction: 'auto', // Kein Pfeil, Tooltip wird zentriert auf dem Marker.
+            opacity: 0.8, // Opazität des Tooltips
+            interactive: false, // Tooltip soll nicht interaktiv sein
+       }} else {
+        tooltipOptions = {
+            offset: [10, 0], // Offset des Tooltips
+            direction: 'auto', // Kein Pfeil, Tooltip wird zentriert auf dem Marker.
+            opacity: 0.7, // Opazität des Tooltips
+            interactive: false, // Tooltip soll nicht interaktiv sein
+       }};
+      // bind tooltip Options to layer
+      layer.bindTooltip('<div>'
+        + layer.feature.properties.name
+        + '</div>',
+        tooltipOptions);
 
       // Tooltip automatisch einblenden, wenn stark reingezoomt wird
       map.on('zoomend', function() {
