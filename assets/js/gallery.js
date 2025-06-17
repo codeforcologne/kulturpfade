@@ -1,7 +1,7 @@
 let galleryItems = [];
 let galleryLightbox;
 
-fetch("./locales/frankenberg/de/gallery.json")
+fetch("service/gallery/" + getURLParameter("id") +  ".json")
   .then(response => response.json())
   .then(data => {
     galleryItems = data.map(item => ({
