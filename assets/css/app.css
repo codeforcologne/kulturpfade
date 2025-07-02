@@ -222,6 +222,7 @@ input[type="radio"], input[type="checkbox"] {
   color: white;
   font-size: 14px;
   text-align: center;
+  opacity: 0.6 !important;
 }
 
 .leaflet-tooltip {

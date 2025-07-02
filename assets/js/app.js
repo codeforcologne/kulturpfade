@@ -162,22 +162,10 @@ var osm = L.tileLayer("https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png", {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 });
 
-/* OpenTopoMap */
-var topo = L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
-  maxZoom: 19,
-  attribution: 'Kartendaten: &copy; OpenStreetMap-Mitwirkende, Kartendarstellung: &copy; OpenTopoMap (CC-BY-SA)'
-});
-
 /* CartoDB */
 var cartodb = L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
   maxZoom: 19,
   attribution: '&copy; OpenStreetMap-Mitwirkende & CARTO'
-});
-
-/* Wikimedia Maps */
-var wikimedia = L.tileLayer("https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png", {
-  maxZoom: 19,
-  attribution: '&copy; OpenStreetMap-Mitwirkende, CC-BY-SA'
 });
 
 /* Overlay Layers */
@@ -377,7 +365,7 @@ function loadPoiLayer() {
 map = L.map("map", {
   zoom: 14,
   center: [50.944511,6.849597],
-  layers: [wikimedia, routes, markerClusters, highlight],
+  layers: [cartodb, routes, markerClusters, highlight],
   zoomControl: false,
   attributionControl: false
 });
@@ -496,10 +484,8 @@ if (document.body.clientWidth <= 767) {
 }
 
 var baseLayers = {
-  "Wikimedia": wikimedia,
   "CartoDB": cartodb,
-  "OSM": osm,
-  "Topo": topo
+  "OSM": osm
 };
 
 var groupedOverlays = {
