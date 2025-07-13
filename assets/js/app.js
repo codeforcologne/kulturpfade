@@ -216,12 +216,30 @@ fetch(urlroute, {
     if (response.ok) {
       $.getJSON(urlroute, function (data) {
         routes.addData(data);
+        // Erst jetzt ist die Geometrie da → fitBounds + Modal
+        if (routes.getBounds().isValid()) {
+          map.fitBounds(routes.getBounds());
+          $("#startModal").modal("show");
+          // Automatisch nach 30 Sekunden schließen
+          setTimeout(function() {
+            $("#startModal").modal("hide");
+          }, 30000);
+        }
       });
     } else {
       console.log('Die Seite wurde nicht gefunden.');
       urlroute = "service/route/" + config.start.id +  ".geojson";
       $.getJSON(urlroute, function (data) {
         routes.addData(data);
+        // Erst jetzt ist die Geometrie da → fitBounds + Modal
+        if (routes.getBounds().isValid()) {
+          map.fitBounds(routes.getBounds());
+          $("#startModal").modal("show");
+          // Automatisch nach 30 Sekunden schließen
+          setTimeout(function() {
+            $("#startModal").modal("hide");
+          }, 30000);
+        }
       });
     }
   }).catch(error => {
