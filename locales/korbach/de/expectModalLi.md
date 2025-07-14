@@ -10,7 +10,7 @@ Der Rundgang führt weiter vom Roten Turm vorbei am Geburtshaus des Chemikers Ro
 
 Am Bendorfer Torplatz biegt der Weg in die Professor-Bier-Straße ein. Von hier aus sind es nur noch wenige Gehminuten vorbei an der Statue des Nachtwächters bis zur traditionsreichen Hirsch-Apotheke. Die Tour endet schließlich an der Stadtbücherei, einem Ort, der die Vergangenheit mit der Gegenwart verbindet.
 
-## Was kann ich in Frankenberg entdecken?
+## Was kann ich in Korbach entdecken?
 
 <audio controls class="full-width-audio">
   <source src="locales/korbach/de/korbach.mp3" type="audio/mpeg">

@@ -1,8 +1,8 @@
-![Korbach](./images/frankenberg/p0.jpg#pano)
+![Korbach](./images/korbach/p0.jpg#pano)
 
-Willkommen in Korbach! 
+Erleben Sie auf einem 2,2 km langen Rundgang die historische Altstadt Korbachs mit ihren stolzen Türmen, malerischen Fachwerkhäusern und spannenden Geschichten von Hanse, Rittern und Patriziern. Lassen Sie sich vom Rathaus bis zur Stadtbücherei von mittelalterlichem Flair und kulturellen Schätzen verzaubern!
 
-## Was kann ich in Frankenberg entdecken?
+## Was kann ich in Korbach entdecken?
 
 <audio controls class="full-width-audio">
   <source src="locales/korbach/de/korbach.mp3" type="audio/mpeg">
