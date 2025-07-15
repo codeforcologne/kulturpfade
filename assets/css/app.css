@@ -248,11 +248,19 @@ input[type="radio"], input[type="checkbox"] {
   margin: 10px 10px 10px 20px;
 }
 
-
 #feature-info img[src*="#pano"] {
   width:100%;
   height: auto;
   margin: 10px 0px 10px 20px;
+}
+
+#expectModalLi img,
+#aboutModalLi img,
+#featuresModalLi img {
+  width: 50%;
+  height: auto;
+  float: right;
+  margin: 10px 10px 10px 20px;
 }
 
 #feature-info p {
