@@ -1,3 +1,5 @@
+![Rathausplatz](./images/korbach/about.jpg)
+
 # Über das Projekt
 
 Der Fotopfad führt durch Korbach. 

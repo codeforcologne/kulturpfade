@@ -1,3 +1,5 @@
+![Bunsenstrasse 4](./images/korbach/expect.jpg)
+
 # Was mich erwartet
 
 Dieser rund 2,2 Kilometer lange Spaziergang durch die Altstadt von Korbach beginnt am Rathaus, das vom steinernen Roland bewacht wird – einem Symbol für städtische Freiheit und Gerichtsbarkeit und der Zugehörigkeit zur Hanse. Von hier aus führt der Weg zum Hartwigschen Haus mit seinem eindrucksvollen Barockportal, einem Zeugnis bürgerlicher Repräsentation vergangener Jahrhunderte.
