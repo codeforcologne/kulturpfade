@@ -5,7 +5,7 @@ Erleben Sie auf einem 2,2 km langen Rundgang die historische Altstadt Korbachs m
 ## Was kann ich in Korbach entdecken?
 
 <audio controls class="full-width-audio">
-  <source src="locales/korbach/de/korbach.mp3" type="audio/mpeg">
+  <source src="locales/korbach/de/p0.mp3" type="audio/mpeg">
   Dein Browser unterstützt kein Audioelement.
 </audio>
 
