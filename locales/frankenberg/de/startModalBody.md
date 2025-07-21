@@ -5,7 +5,7 @@ Willkommen in Frankenberg! Auf einem rund 3,5 Kilometer langen Rundweg entdecken
 ## Was kann ich in Frankenberg entdecken?
 
 <audio controls class="full-width-audio">
-  <source src="locales/frankenberg/de/frankenberg.mp3" type="audio/mpeg">
+  <source src="locales/frankenberg/de/p0.mp3" type="audio/mpeg">
   Dein Browser unterstützt kein Audioelement.
 </audio>
 
@@ -14,4 +14,4 @@ Willkommen in Frankenberg! Auf einem rund 3,5 Kilometer langen Rundweg entdecken
 - Über das Pfeilsymbol können Sie jederzeit Ihre Position auf der Karte anzeigen lassen.
 - "Route" zeigt Entfernungen zwischen den Sehenswürdigkeiten
 - Unter „About“ finden Sie spannende Hintergrundinformationen zum Projekt.
-- In der „Gallery“ können Sie ganz in Ruhe durch die schönsten Bilder stöber
+- In der „Gallery“ können Sie ganz in Ruhe durch die schönsten Bilder stöbern

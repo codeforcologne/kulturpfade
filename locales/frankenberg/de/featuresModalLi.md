@@ -1,3 +1,5 @@
+![Fachwerkhaus](./images/frankenberg/features.jpg)
+
 # Features
 
 - Ein erster Überblick zeigt Ihnen den Verlauf der Route sowie die Anzahl der Sehenswürdigkeiten, die Sie unterwegs entdecken können.

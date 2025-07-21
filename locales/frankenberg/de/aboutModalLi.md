@@ -1,3 +1,5 @@
+![Rathausplatz](./images/frankenberg/about.jpg)
+
 # Über das Projekt
 
 Der Fotopfad führt durch Frankenberg (Eder). Er führt entlang von Stationen, die an Tafeln im Schildformat in Stadtbild erkennbar sind. Sie erlauben einen Einblick in die Geschichte der Stadt Frankenberg mit ihren architektonischen Besonderheiten, Erinnerungsorten und historischen Bauten. Ausgangspunkt der Tour ist das Rathaus – das Herz der Stadt.
