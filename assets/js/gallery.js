@@ -7,7 +7,8 @@ fetch("service/gallery/" + getURLParameter("id") +  ".json")
     galleryItems = data.map(item => ({
       href: item.href,
       type: 'image',
-      title: item.title
+      title: item.title,
+      description: 'Copyright © Wolfram Eberius',
     }));
 
     // Initialisiere die Lightbox einmal
