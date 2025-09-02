@@ -2,20 +2,22 @@
 
 # Was mich erwartet
 
-Dieser gut zwei Kilometer lange Spaziergang durch die Altstadt von Korbach beginnt am Rathaus, das vom steinernen Roland bewacht wird – einem Symbol für städtische Freiheit und Gerichtsbarkeit und der Zugehörigkeit zur Hanse. Von hier aus führt der Weg zum Hartwigschen Haus mit seinem eindrucksvollen Barockportal, einem Zeugnis bürgerlicher Repräsentation vergangener Jahrhunderte.
+Korbachs Geschichte beginnt mit der ersten urkundlichen Erwähnung eines Gutes namens „Curbiki“ im Jahr **980**, das Kaiser Otto II. dem Kloster Corvey überschrieb. Man geht davon aus, dass bereits im 8. oder 9. Jahrhundert Siedlungen existierten und die Stadt möglicherweise schon 1073 befestigt wurde. 
 
-Weiter geht es vorbei an dem Siegerdenkmal Waldeccia, der mächtigen St.-Kilianskirche und dem traditionsreichen Mönchhof. Auf dem Marktplatz treffen Besucher auf einen mittelalterlichen Pranger. Entlang der Route steht ein prächtiges Patrizierhaus, ein typisches diemelsächsisches Bauernhaus und das sogenannte Spukhaus, um das sich zahlreiche Geschichten ranken.
+Ein Meilenstein war die Verleihung des **Soester Stadtrechts im Jahr 1188** durch Bischof Bernhard I. von Paderborn. Die Stadt entwickelte sich in die **Altstadt** und die **Neustadt**, die in einem "friedlichen Wettbewerb" zwei beeindruckende gotische Hallenkirchen – die Kilianskirche und die Nikolaikirche – hervorbrachten. 
 
-Das nahegelegene Enser Tor bleibt zwar links liegen, doch das gotische Lagerhaus, die Stadtbefestigung im Schießhagen und die Freilichtbühne liegen auf dem weiteren Weg. Entlang der alten Mauern laden der Totenhagen und der Tylenturm zur Entdeckung ein, ebenso ein barockes Wohnhaus, das die historische Vielfalt der Stadt unterstreicht.
+Als **einzige Hansestadt in Hessen** spielte Korbach eine wichtige Rolle im mittelalterlichen Handel. Zwischen 1340 und 1480 führten **Pestepidemien** zu einem drastischen Bevölkerungsrückgang von rund 60 Prozent in der Region. 
 
-Der Rundgang führt weiter vom Roten Turm vorbei am Geburtshaus des Chemikers Robert Bunsen bis zur St.-Nicolaikirche mit ihren markanten Doppeltürmen. Der Wollweberturm wird zwar nicht direkt passiert, ist aber ein lohnenswerter Abstecher für Interessierte.
+Im Jahr **1664 zerstörte ein verheerender Stadtbrand** große Teile Korbachs, doch die Stadt erholte sich immer wieder. Im 19. Jahrhundert wurden fünf Stadttore abgerissen, um Platz für den Verkehr zu schaffen, wobei nur noch ein Teil des Enser Tores erhalten ist.
 
-Am Bendorfer Torplatz biegt der Weg in die Professor-Bier-Straße ein. Von hier aus sind es nur noch wenige Gehminuten vorbei an der Statue des Nachtwächters bis zur traditionsreichen Hirsch-Apotheke. Die Tour endet schließlich an der Stadtbücherei, einem Ort, der die Vergangenheit mit der Gegenwart verbindet.
+Heute ist Korbach ein wichtiges wirtschaftliches und kulturelles Zentrum mit einzigartigen Natur-Highlights wie der **Korbacher Spalte**, der ältesten Fossilienfundstätte Europas, und dem **Eisenberg**, Deutschlands größter historischer Goldlagerstätte. 
+
+Die Stadt blickt aktiv in die Zukunft, indem sie seit 2022 eine **umfassende Nachhaltigkeitsstrategie** verfolgt, die unter anderem die Digitalisierung und Mehrsprachigkeit der Verwaltung bis 2028 umfasst und bis 2030 ein klimafreundliches ÖPNV-Angebot anstrebt.
 
 ## Was kann ich in Korbach entdecken?
 
 <audio controls class="full-width-audio">
-  <source src="locales/korbach/de/korbach.mp3" type="audio/mpeg">
+  <source src="locales/korbach/de/expect.mp3" type="audio/mpeg">
   Dein Browser unterstützt kein Audioelement.
 </audio>
 
