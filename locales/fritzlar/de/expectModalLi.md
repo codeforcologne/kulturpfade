@@ -2,7 +2,15 @@
 
 # Geschichte
 
-Die Geschichte Fritzlars beginnt im frühen 8. Jahrhundert mit dem angelsächsischen Missionar Bonifatius, der um 723/724 die Donareiche fällte und damit die Christianisierung einleitete sowie ein Kloster gründete, das zum Ausgangspunkt der Stadtentwicklung wurde. Als strategisch wichtiger Ort an der Grenze zwischen Franken und Sachsen stieg Fritzlar zur *Kaiserstadt auf, wo 919 Heinrich I. zum König gewählt wurde und bedeutsame Reichstage stattfanden. Trotz wiederholter Zerstörungen, wie 1079 und 1232, wurde die Stadt als kurmainzische Enklave wieder aufgebaut, verlor aber an reichspolitischer Bedeutung. Die Pest und der Dreißigjährige Krieg im 17. Jahrhundert brachten massive Verwüstungen, Plünderungen und einen dramatischen Bevölkerungsrückgang, wodurch Fritzlar seinen einstigen Glanz verlor. Auch der Siebenjährige Krieg und die napoleonische Besetzung führten zu schweren Zerstörungen und dem Ende der Befestigungsanlagen, bevor Fritzlar 1803 an Hessen-Kassel angegliedert wurde. Heute präsentiert sich Fritzlar als gut erhaltene Dom- und Kaiserstadt mit einer mittelalterlichen Stadtmauer und zahlreichen Fachwerkhäusern, die von ihrer reichen und wechselhaften Geschichte zeugen.
+Die Geschichte Fritzlars beginnt um 723/724 mit dem Missionar Bonifatius, der die Donareiche fällte und eine erste Kirche errichtete. Bald entwickelte sich die Siedlung zum bevorzugten Aufenthaltsort deutscher Könige und Kaiser im 10. und 11. Jahrhundert, wo beispielsweise Heinrich I. zum König gewählt wurde. 
+
+Eine verheerende Zerstörung durch Landgraf Konrad von Thüringen im Jahr 1232 führte zum sofortigen Wiederaufbau mit verstärkten Stadtmauern und der Entstehung einer Neustadt. Wichtige geistliche Institutionen wie das Franziskanerkloster und der Deutschordenshof prägten das Stadtbild zusätzlich. 
+
+Doch Pestseuchen und der Dreißigjährige Krieg dezimierten die Bevölkerung drastisch und brachten Plünderungen. Eine dunkle Zeit waren die Jahre von 1596 bis 1631, geprägt von einer intensiven Hexenverfolgung, der mindestens 62 Menschen zum Opfer fielen. 
+
+Über Jahrhunderte hinweg war Fritzlar eine katholische Enklave des Erzbistums Mainz, bevor es 1803 Teil von Hessen wurde. Im 19. und 20. Jahrhundert entwickelte sich Fritzlar zur Garnisonsstadt, doch die blühende jüdische Gemeinde wurde 1938 brutal zerstört. Auch das Ursulinenkloster, eine über Jahrhunderte wichtige Mädchenschule, schloss 2003 wegen Nachwuchsmangels. 
+
+Heute begeistert Fritzlar mit einem gut erhaltenen mittelalterlichen Stadtbild, dem imposanten Dom und einer vielfältigen Wirtschaft, die von der Bundeswehr bis zur weltweit größten Sauerkrautfabrik reicht.
 
 ## Eine kurze Geschichte Fritzlars
 
