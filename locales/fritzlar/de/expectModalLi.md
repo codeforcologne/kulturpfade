@@ -8,7 +8,7 @@ Eine verheerende Zerstörung durch Landgraf Konrad von Thüringen im Jahr 1232 f
 
 Doch Pestseuchen und der Dreißigjährige Krieg dezimierten die Bevölkerung drastisch und brachten Plünderungen. Eine dunkle Zeit waren die Jahre von 1596 bis 1631, geprägt von einer intensiven Hexenverfolgung, der mindestens 62 Menschen zum Opfer fielen. 
 
-Über Jahrhunderte hinweg war Fritzlar eine katholische Enklave des Erzbistums Mainz, bevor es 1803 Teil von Hessen wurde. Im 19. und 20. Jahrhundert entwickelte sich Fritzlar zur Garnisonsstadt, doch die blühende jüdische Gemeinde wurde 1938 brutal zerstört. Auch das Ursulinenkloster, eine über Jahrhunderte wichtige Mädchenschule, schloss 2003 wegen Nachwuchsmangels. 
+Über Jahrhunderte hinweg war Fritzlar eine katholische Enklave des Erzbistums Mainz, bevor es 1803 Teil von Hessen wurde. Im 19. und 20. Jahrhundert entwickelte sich Fritzlar zur Garnisonsstadt. Die blühende jüdische Gemeinde wurde 1938 brutal zerstört. Das Ursulinenkloster, eine über Jahrhunderte wichtige Mädchenschule, schloss 2003 wegen Nachwuchsmangels. 
 
 Heute begeistert Fritzlar mit einem gut erhaltenen mittelalterlichen Stadtbild, dem imposanten Dom und einer vielfältigen Wirtschaft, die von der Bundeswehr bis zur weltweit größten Sauerkrautfabrik reicht.
 
