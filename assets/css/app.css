@@ -222,6 +222,7 @@ input[type="radio"], input[type="checkbox"] {
   color: white;
   font-size: 14px;
   text-align: center;
+  opacity: 0.6 !important;
 }
 
 .leaflet-tooltip {
@@ -247,14 +248,28 @@ input[type="radio"], input[type="checkbox"] {
   margin: 10px 10px 10px 20px;
 }
 
-
 #feature-info img[src*="#pano"] {
   width:100%;
   height: auto;
   margin: 10px 0px 10px 20px;
 }
 
+#expectModalLi img,
+#aboutModalLi img,
+#featuresModalLi img {
+  width: 50%;
+  height: auto;
+  float: right;
+  margin: 10px 10px 10px 20px;
+}
+
 #feature-info p {
   text-align: justify;
   hyphens: auto;
+}
+
+.full-width-audio {
+  width: 100%;
+  max-width: 100%;
+  display: block;
 }

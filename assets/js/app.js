@@ -32,6 +32,7 @@ $("#about-btn").click(function() {
 });
 
 $("#full-extent-btn").click(function() {
+  $("#startModal").modal("show");
   map.fitBounds(routes.getBounds());
   $(".navbar-collapse.in").collapse("hide");
   return false;
@@ -116,7 +117,7 @@ function clearHighlight() {
 
 function sidebarClick(id) {
   var layer = markerClusters.getLayer(id);
-  map.setView([layer.getLatLng().lat, layer.getLatLng().lng], 17);
+  map.setView([layer.getLatLng().lat, layer.getLatLng().lng], 20);
   layer.fire("click");
   /* Hide sidebar and go to the map on small screens */
   if (document.body.clientWidth <= 767) {
@@ -132,11 +133,17 @@ function syncSidebar() {
   pois.eachLayer(function (layer) {
     if (map.hasLayer(poiLayer)) {
       if (map.getBounds().contains(layer.getLatLng())) {
+        // show number only if part of track
+        const propsnr = (layer.feature.properties.point === "p") ? layer.feature.properties.nr : " "
         $("#feature-list tbody")
           .append('<tr class="feature-row" id="'
-            + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng
-            + '"><td style="vertical-align: middle;text-align: right" class="feature-nr">' + layer.feature.properties.nr + '</td><td class="feature-name">'
-            + layer.feature.properties.name + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+            + L.stamp(layer) + '" lat="' + layer.getLatLng().lat
+            + '" lng="' + layer.getLatLng().lng
+            + '"><td style="vertical-align: middle;text-align: right" class="feature-nr">'
+            + '&nbsp;'
+            + '</td><td class="feature-name">'
+            + layer.feature.properties.name
+            + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
       }
     }
   });
@@ -151,9 +158,15 @@ function syncSidebar() {
 }
 
 /* Basemap Layers */
-var osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+var osm = L.tileLayer("https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png", {
   maxZoom: 19,
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+});
+
+/* CartoDB */
+var cartodb = L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+  maxZoom: 19,
+  attribution: '&copy; OpenStreetMap-Mitwirkende & CARTO'
 });
 
 /* Overlay Layers */
@@ -204,12 +217,30 @@ fetch(urlroute, {
     if (response.ok) {
       $.getJSON(urlroute, function (data) {
         routes.addData(data);
+        // Erst jetzt ist die Geometrie da → fitBounds + Modal
+        if (routes.getBounds().isValid()) {
+          map.fitBounds(routes.getBounds());
+          $("#startModal").modal("show");
+          // Automatisch nach 30 Sekunden schließen
+          setTimeout(function() {
+            $("#startModal").modal("hide");
+          }, 30000);
+        }
       });
     } else {
       console.log('Die Seite wurde nicht gefunden.');
       urlroute = "service/route/" + config.start.id +  ".geojson";
       $.getJSON(urlroute, function (data) {
         routes.addData(data);
+        // Erst jetzt ist die Geometrie da → fitBounds + Modal
+        if (routes.getBounds().isValid()) {
+          map.fitBounds(routes.getBounds());
+          $("#startModal").modal("show");
+          // Automatisch nach 30 Sekunden schließen
+          setTimeout(function() {
+            $("#startModal").modal("hide");
+          }, 30000);
+        }
       });
     }
   }).catch(error => {
@@ -234,22 +265,27 @@ var poiLayer = L.geoJson(null);
 
 var pois = L.geoJson(null, {
   pointToLayer: function (feature, latlng) {
-    return L.marker(latlng, {
-      icon: L.divIcon({
-        className: 'red-tooltip',
-        html: '<div class="icon-container">' + feature.properties.nr + '</div>',
-        iconSize: [40, 30],
-        iconAnchor: [20, 10]
-      }),
-      title: feature.properties.nr,
-      riseOnHover: true
-    });
+      // If style is 0, show empty string, else show nr
+  //    const iconHtml = (feature.properties.point === "o") ? "" : feature.properties.nr;
+  //    const iconSize = (feature.properties.point === "o") ? [20, 20] : [40, 30];
+      const iconHtml = "";
+      const iconSize = [20, 20];
+      return L.marker(latlng, {
+        icon: L.divIcon({
+          className: 'red-tooltip',
+          html: '<div class="icon-container">' + iconHtml + '</div>',
+          iconSize: iconSize,
+          iconAnchor: [20, 10]
+        }),
+        title: feature.properties.nr,
+        riseOnHover: true
+      });
   },
   onEachFeature: function (feature, layer) {
     if (feature.properties) {
 
       var content = "";
-      var url = 'locales/' + namespace + '/' + languageCode + '/p' + feature.properties.nr + '.md';
+      var url = 'locales/' + namespace + '/' + languageCode + '/p' + feature.properties.id + '.md';
 
      fetch(url).then(response => {
          if (!response.ok) {
@@ -264,26 +300,45 @@ var pois = L.geoJson(null, {
 
       layer.on({
         click: function (e) {
-          $("#feature-title").html(feature.properties.nr + ' ' + feature.properties.name);
+          const featureTitle = feature.properties.name;
+          $("#feature-title").html(featureTitle);
           $("#feature-info").html(content);
           $("#featureModal").modal("show");
           highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], highlightStyle));
         }
       });
+      // show number only if part of track
+      const propsnr = (layer.feature.properties.point === "p") ? layer.feature.properties.nr : " "
       $("#feature-list tbody")
         .append('<tr class="feature-row" id="'
         + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng
-        + '"><td style="vertical-align: middle;">' + layer.feature.properties.nr + '</td><td class="feature-name">'
-        + layer.feature.properties.name + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+        + '"><td style="vertical-align: middle;">'
+        + '&nbsp;'
+        + '</td><td class="feature-name">'
+        + layer.feature.properties.name
+        + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
 
       var tooltipOptions = {
-        offset: [10, -50],
-        iconAnchor: [20, 10],
-        className: 'leaflet-tooltip'
+            offset: [15, 0], // Offset des Tooltips
+            direction: 'auto', // Kein Pfeil, Tooltip wird zentriert auf dem Marker.
+            opacity: 0.7, // Opazität des Tooltips
+            interactive: false // Tooltip soll nicht interaktiv sein
       };
-      layer.bindTooltip('<div class="leaflet-tooltip">'
-      + layer.feature.properties.name
-      + '</div>', tooltipOptions).openTooltip();
+
+      // bind tooltip Options to layer
+      layer.bindTooltip('<div>'
+        + layer.feature.properties.name
+        + '</div>',
+        tooltipOptions);
+
+      // Tooltip automatisch einblenden, wenn stark reingezoomt wird
+      map.on('zoomend', function() {
+        if (map.getZoom() >= 18) {
+          layer.openTooltip();
+        } else {
+          layer.closeTooltip();
+        }
+      });
 
     }
   }
@@ -329,7 +384,7 @@ function loadPoiLayer() {
 map = L.map("map", {
   zoom: 14,
   center: [50.944511,6.849597],
-  layers: [osm, routes, markerClusters, highlight],
+  layers: [cartodb, routes, markerClusters, highlight],
   zoomControl: false,
   attributionControl: false
 });
@@ -448,15 +503,16 @@ if (document.body.clientWidth <= 767) {
 }
 
 var baseLayers = {
-  "Street Map": osm
+  "CartoDB": cartodb,
+  "OSM": osm
 };
 
 var groupedOverlays = {
-  "Sehenswürdigkeiten": {
-    "Sehenswürdigkeiten": poiLayer
+  "POI": {
+    "Points Of Interest": poiLayer
   },
-  "Kulturpfade": {
-    "Lindenthal": routes
+  "Route": {
+    "Route": routes
   }
 };
 

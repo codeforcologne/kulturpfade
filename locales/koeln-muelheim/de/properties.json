@@ -1,0 +1,17 @@
+{
+  "title":"Köln Mülheim",
+  "brand": "Fotopfad Köln Mülheim",
+  "welcomeModelTitle":"Willkommen",
+  "closeBtn": "Schliessen",
+  "zoom": "Start",
+  "download": "Download",
+  "language": "Sprache",
+  "pois": "Sehenswürdigkeiten",
+  "route": "Route",
+  "en": "english",
+  "de": "deutsch",
+  "fr": "français",
+  "tr": "Türkçe",
+  "ja": "日本語",
+  "languages": ["de"]
+}

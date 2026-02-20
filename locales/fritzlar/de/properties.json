@@ -1,0 +1,20 @@
+{
+  "title":"Fotopfad Fritzlar",
+  "brand": "Fritzlar",
+  "welcomeModelTitle":"Willkommen zum Fotopfad",
+  "startModalTitle": "Fotopfad Fritzlar",
+  "galleryModalTitle": "Galerie",
+  "closeBtn": "Schliessen",
+  "zoom": "Start",
+  "download": "Download",
+  "language": "Sprache",
+  "pois": "Sehenswürdigkeiten",
+  "path": "Fotopfad",
+  "route": "Route",
+  "en": "english",
+  "de": "deutsch",
+  "fr": "français",
+  "tr": "Türkçe",
+  "ja": "日本語",
+  "languages": ["de"]
+}

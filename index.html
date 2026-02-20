@@ -21,16 +21,35 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.81.0/L.Control.Locate.css">
   <link rel="stylesheet" href="//cdn.datatables.net/2.0.3/css/dataTables.dataTables.min.css">
   <link rel="stylesheet" href="assets/leaflet/leaflet.groupedlayercontrol.css">
+  <link rel="stylesheet" href="assets/glightbox/glightbox.css" />
   <link rel="stylesheet" href="assets/css/app.css">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon-76.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon-120.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon-152.png">
-  <link rel="icon" sizes="196x196" href="assets/img/favicon-196.png">
-  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/fotospuren.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/img/fotospuren.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/img/fotospuren.png">
+  <link rel="icon" sizes="196x196" href="assets/img/fotospuren.png">
+  <!-- link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" -->
 </head>
 
 <body>
+
+<div class="modal fade" id="startModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="startModalTitle">Start</h4>
+      </div>
+      <div class="modal-body" id="startModalBody">
+        <!-- will be set by class RouteModal -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><span id="closeBtnLegendModal">Schliessen</span></button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -41,8 +60,9 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="full-extent-btn"><i class="bi bi-arrows-fullscreen"></i>&nbsp;<span id="zoomSelectorSpan">Zoom</span></a></li>
+        <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="full-extent-btn"><i class="bi bi-play-fill"></i>&nbsp;<span id="zoomSelectorSpan">Zoom</span></a></li>
         <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="legend-btn"><i class="bi bi-table"></i>&nbsp;<span id="routeSelectorSpan">Route</span></a></li>
+        <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="gallery-btn"><i class="bi bi-images"></i>&nbsp;<span id="gallerySelectorSpan">Galerie</span></a></li>
         <li class="dropdown">
           <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="bi bi-globe2"></i>&nbsp;&nbsp;<span id="languageSelectorA">Sprache</span><b class="caret"></b></a>
           <ul class="dropdown-menu" id="languageSelectorUl">
@@ -191,8 +211,10 @@
 
 <script src="assets/i18next/i18nextHttpBackend.js"></script>
 <script src="assets/leaflet/leaflet.groupedlayercontrol.js"></script>
+<script src="assets/glightbox/glightbox.js"></script>
 <script src="assets/js/config.js"></script>
 <script src="assets/js/locale.js"></script>
 <script src="assets/js/app.js"></script>
+<script src="assets/js/gallery.js"></script>
 </body>
 </html>

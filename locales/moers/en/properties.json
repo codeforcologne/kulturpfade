@@ -1,0 +1,15 @@
+{
+  "title":"Moers - History Stations",
+  "brand": "History Station",
+  "welcomeModelTitle":"Welcome to the history stations of Moers",
+  "closeBtn": "close",
+  "zoom": "Zoom",
+  "download": "Download",
+  "language": "Language",
+  "pois": "Points Of Interest",
+  "route": "Route",
+  "en": "english",
+  "de": "deutsch",
+  "fr": "français",
+  "languages": ["de", "en", "fr"]
+}
