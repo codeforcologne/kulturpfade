@@ -4,7 +4,7 @@ Die Fotopfade sind ein Projekt, das fotografisch reizvolle Touren durch Städte 
 
 Besuchen Sie z.B. [Frankenberg], [Korbach] oder [Fritzlar]. Oder folgen Sie mir nach [Köln Mülheim] Folgen Sie mit dem Smartphone dem blauen Punkt durch die Stadt.
 
-- [Frankenberg]: https://weberius.github.io/fotopfade/index.html?id=frankenberg
-- [Korbach]: https://weberius.github.io/fotopfade/index.html?id=korbach
-- [Fritzlar]: https://weberius.github.io/fotopfade/index.html?id=fritzlar
-- [Köln Mülheim]: https://weberius.github.io/fotopfade/index.html?id=koeln-muelheim
+[Frankenberg]: https://weberius.github.io/fotopfade/index.html?id=frankenberg
+[Korbach]: https://weberius.github.io/fotopfade/index.html?id=korbach
+[Fritzlar]: https://weberius.github.io/fotopfade/index.html?id=fritzlar
+[Köln Mülheim]: https://weberius.github.io/fotopfade/index.html?id=koeln-muelheim

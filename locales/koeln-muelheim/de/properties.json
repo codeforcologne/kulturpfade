@@ -1,7 +1,10 @@
 {
   "title":"Köln Mülheim",
   "brand": "Fotopfad Köln Mülheim",
-  "welcomeModelTitle":"Willkommen",
+  "welcomeModelTitle":"Das Projekt",
+  "startModalTitle": "Fotopfad Köln Mülheim",
+  "aboutModalTitle": "Das Projekt",
+  "galleryModalTitle": "Galerie",
   "closeBtn": "Schliessen",
   "zoom": "Start",
   "download": "Download",

@@ -53,6 +53,7 @@ function updateContent() {
     document.getElementById('poisPanelTitle').innerHTML = i18next.t('pois');
     document.getElementById('welcomeModelTitle').innerHTML = i18next.t('welcomeModelTitle');
     document.getElementById('startModalTitle').innerHTML = i18next.t('startModalTitle');
+    document.getElementById('aboutModalTitle').innerHTML = i18next.t('aboutModalTitle');
 
     new ModalBuilder().build('aboutTabsHeader', i18next.language);
     new ModalBuilder().loadMarkdown('attributionModalLi', i18next.language);
