@@ -631,10 +631,11 @@ class ModalBuilder {
          });
      }
 
-     loadMarkdown(elementByid, languageCode) {
+     loadMarkdown(elementByid, languageCode, fileName) {
 
-            // Markdown-Datei abrufen
-            const url = 'locales/' + namespace + '/' + languageCode + '/' + elementByid + '.md';
+            // Markdown-Datei abrufen; fileName ist optional und überschreibt elementByid als Dateiname
+            const resolvedFileName = fileName || elementByid;
+            const url = 'locales/' + namespace + '/' + languageCode + '/' + resolvedFileName + '.md';
              fetch(url).then(response => {
                  if (!response.ok) {
                    throw new Error('Network response was not ok');
@@ -652,3 +653,27 @@ class ModalBuilder {
     }
 
 }
+
+/**************************************************************************************************/
+// FOOTER LINK HANDLERS
+/**************************************************************************************************/
+
+$("#footer-impressum-btn").click(function(e) {
+  e.preventDefault();
+  $("#fImpressumModal").modal("show");
+});
+
+$("#footer-disclaimer-btn").click(function(e) {
+  e.preventDefault();
+  $("#fDisclaimerModal").modal("show");
+});
+
+$("#footer-datenschutz-btn").click(function(e) {
+  e.preventDefault();
+  $("#fDatenschutzModal").modal("show");
+});
+
+$("#footer-coffee-btn").click(function(e) {
+  e.preventDefault();
+  $("#fCoffeeModal").modal("show");
+});

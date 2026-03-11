@@ -1,36 +1,17 @@
-Disclaimer
-==========
+## Disclaimer / Haftungsausschluss
 
-Haftungsbeschränkung
------------------------
+### Haftung für Inhalte
 
-Die Inhalte des
-Internetauftritts wurden mit größtmöglicher Sorgfalt und nach
-bestem Gewissen erstellt. Dennoch übernimmt der Anbieter dieser
-Webseite keine Gewähr für die Aktualität, Vollständigkeit und
-Richtigkeit der bereitgestellten Seiten und Inhalte.
+Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte (insbesondere der Points-of-Interest und Routenverläufe) können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
 
-Externe Links
-----------------
+### Haftung für Links
 
-Die Webseite enthält
-    sog. „externe Links“ (Verlinkungen) zu anderen Webseiten, auf
-    deren Inhalt der Anbieter der Webseite keinen Einfluss hat. Aus
-    diesem Grund kann der Anbieter für diese Inhalte auch keine
-    Gewähr übernehmen.
+Unser Angebot enthält Links zu externen Webseiten Dritter (z. B. PayPal), auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
 
-Datenschutz
---------------
+### Urheberrecht
 
-Durch den Besuch des
-    Internetauftritts können Informationen (Datum, Uhrzeit,
-    aufgerufene Seite) über den Zugriff auf dem Server gespeichert
-    werden. Es werden keine personenbezogenenen (z. B. Name,
-    Anschrift oder E-Mail-Adresse) Daten, gespeichert.
+Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
 
-Quelle
-------
+### Hinweis zu "Spenden" / Support
 
-[Disclaimer und Websites erstellen]
-
-[Disclaimer und Websites erstellen]: href="http://www.mustervorlage.net/homepage-kostenlos
+Bei den über diese App geleisteten Zahlungen handelt es sich rechtlich um freiwillige Zuwendungen (Schenkungen) ohne Gegenleistung zur Unterstützung des Projekts. Es besteht kein Anspruch auf eine Spendenbescheinigung im steuerrechtlichen Sinne.
