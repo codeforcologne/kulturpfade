@@ -1,18 +1,17 @@
-Disclaimer
-==========
+## Disclaimer
 
-## Limitation of liability
+### Liability for Content
 
-The contents of the website were created with the greatest possible care and to the best of our knowledge. Nevertheless, the provider of this website assumes no liability for the topicality, completeness and correctness of the pages and content provided.
+The contents of our pages have been created with the utmost care. However, we cannot guarantee the accuracy, completeness or timeliness of the content (in particular points of interest and route information). As a service provider, we are responsible for our own content on these pages in accordance with general law.
 
-## External links
+### Liability for Links
 
-The website contains so-called "external links" (links) to other websites, over whose content the provider of the website has no influence. For this reason, the provider cannot assume any liability for this content.
+Our offer contains links to external third-party websites (e.g. PayPal) over whose content we have no influence. Therefore we cannot accept any liability for this external content. The respective provider or operator of the pages is always responsible for the content of linked pages.
 
-## Data protection**
+### Copyright
 
-By visiting the website, information (date, time, page accessed) about the access can be stored on the server. There will be no personal (e.g. B. Name, address or e-mail address) data, stored.
+The content and works created by the site operators on these pages are subject to German copyright law. Reproduction, processing, distribution and any kind of exploitation outside the limits of copyright law require the written consent of the respective author or creator.
 
-## Source 
+### Note on "Donations" / Support
 
-[Disclaimer und Websites erstellen](http://www.mustervorlage.net/homepage-kostenlos)
+Payments made via this app are legally voluntary contributions (gifts) without consideration in support of the project. There is no entitlement to a donation receipt for tax purposes.

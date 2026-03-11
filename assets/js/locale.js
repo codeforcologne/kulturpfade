@@ -63,6 +63,12 @@ function updateContent() {
     new ModalBuilder().loadMarkdown('aboutModalLi', i18next.language);
     new ModalBuilder().loadMarkdown('startModalBody', i18next.language);
     new ModalBuilder().build('leaflet-control-attribution', i18next.language);
+
+    // Footer modals
+    new ModalBuilder().loadMarkdown('fImpressumLi', i18next.language, 'impressumModalLi');
+    new ModalBuilder().loadMarkdown('fDisclaimerLi', i18next.language, 'disclaimerModalLi');
+    new ModalBuilder().loadMarkdown('fDatenschutzLi', i18next.language, 'datenschutzLi');
+    new ModalBuilder().loadMarkdown('fCoffeeLi', i18next.language, 'bymecoffeeModalLi');
 }
 
 

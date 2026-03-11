@@ -5,6 +5,43 @@ html, body, #container {
 }
 body {
   padding-top: 50px;
+  padding-bottom: 25px;
+}
+
+#app-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 25px;
+  background-color: #000000;
+  color: #aaaaaa;
+  z-index: 1000;
+  font-size: 11px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 15px;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 0;
+}
+
+.footer-nav a {
+  color: #aaaaaa;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+.footer-nav a:hover {
+  color: #ffffff;
+  text-decoration: none;
 }
 div.leaflet-control-attribution {
   font-size: 10px;

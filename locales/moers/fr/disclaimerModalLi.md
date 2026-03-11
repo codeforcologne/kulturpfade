@@ -1,18 +1,17 @@
-Disclaimer
-==========
+## Avertissement / Clause de non-responsabilité
 
-## Limitation de responsabilité
+### Responsabilité pour le contenu
 
-Le contenu du site Internet a été créé avec le plus grand soin et en toute conscience. Néanmoins, le fournisseur de ce site Web ne garantit pas l'actualité, l'exhaustivité et l'exactitude des pages et des contenus mis à disposition.
+Le contenu de nos pages a été créé avec le plus grand soin. Cependant, nous ne pouvons garantir l'exactitude, l'exhaustivité ou l'actualité du contenu (en particulier les points d'intérêt et les itinéraires). En tant que prestataire de services, nous sommes responsables de notre propre contenu sur ces pages conformément aux lois générales.
 
-## Liens externes
+### Responsabilité pour les liens
 
-Le site Web contient des « liens externes » (liens) vers d'autres sites Web sur le contenu desquels le fournisseur du site Web n'a aucune influence. Pour cette raison, le fournisseur ne peut pas non plus assumer la responsabilité de ce contenu.
+Notre offre contient des liens vers des sites Web tiers (p. ex. PayPal) sur le contenu desquels nous n'avons aucune influence. Nous ne pouvons donc accepter aucune responsabilité pour ce contenu externe. Le fournisseur ou l'exploitant respectif des pages est toujours responsable du contenu des pages liées.
 
-## Protection des données
+### Droit d'auteur
 
-En visitant le site Internet, des informations (date, heure, page consultée) peuvent être stockées sur l'accès sur le serveur. Il n'y a pas de données personnelles (par ex. B. Nom, adresse ou adresse e-mail) données, stockées.
+Le contenu et les œuvres créés par les exploitants du site sur ces pages sont soumis au droit d'auteur allemand. La reproduction, le traitement, la distribution et toute forme d'exploitation au-delà des limites du droit d'auteur nécessitent le consentement écrit de l'auteur ou du créateur respectif.
 
-## Source
+### Remarque sur les « Dons » / Support
 
-[Disclaimer und Websites erstellen](http://www.mustervorlage.net/homepage-kostenlos)
+Les paiements effectués via cette application sont juridiquement des contributions volontaires (dons) sans contrepartie en soutien au projet. Il n'y a pas de droit à un reçu de don à des fins fiscales.
