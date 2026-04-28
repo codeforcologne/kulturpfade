@@ -32,7 +32,6 @@ $("#about-btn").click(function() {
 });
 
 $("#full-extent-btn").click(function() {
-  $("#startModal").modal("show");
   map.fitBounds(routes.getBounds());
   $(".navbar-collapse.in").collapse("hide");
   return false;
@@ -217,14 +216,8 @@ fetch(urlroute, {
     if (response.ok) {
       $.getJSON(urlroute, function (data) {
         routes.addData(data);
-        // Erst jetzt ist die Geometrie da → fitBounds + Modal
         if (routes.getBounds().isValid()) {
           map.fitBounds(routes.getBounds());
-          $("#startModal").modal("show");
-          // Automatisch nach 30 Sekunden schließen
-          setTimeout(function() {
-            $("#startModal").modal("hide");
-          }, 30000);
         }
       });
     } else {
@@ -232,14 +225,8 @@ fetch(urlroute, {
       urlroute = "service/route/" + config.start.id +  ".geojson";
       $.getJSON(urlroute, function (data) {
         routes.addData(data);
-        // Erst jetzt ist die Geometrie da → fitBounds + Modal
         if (routes.getBounds().isValid()) {
           map.fitBounds(routes.getBounds());
-          $("#startModal").modal("show");
-          // Automatisch nach 30 Sekunden schließen
-          setTimeout(function() {
-            $("#startModal").modal("hide");
-          }, 30000);
         }
       });
     }
@@ -285,7 +272,7 @@ var pois = L.geoJson(null, {
     if (feature.properties) {
 
       var content = "";
-      var url = 'locales/' + namespace + '/' + languageCode + '/p' + feature.properties.id + '.md';
+      var url = 'locales/' + namespace + '/' + languageCode + '/p' + feature.properties.nr + '.md';
 
      fetch(url).then(response => {
          if (!response.ok) {

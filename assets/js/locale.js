@@ -61,7 +61,6 @@ function updateContent() {
     new ModalBuilder().loadMarkdown('linksModalLi', i18next.language);
     new ModalBuilder().loadMarkdown('expectModalLi', i18next.language);
     new ModalBuilder().loadMarkdown('aboutModalLi', i18next.language);
-    new ModalBuilder().loadMarkdown('startModalBody', i18next.language);
     new ModalBuilder().build('leaflet-control-attribution', i18next.language);
 }
 
