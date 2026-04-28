@@ -1,6 +1,0 @@
-# What to expect
-
-
-## Quelle
-
-
